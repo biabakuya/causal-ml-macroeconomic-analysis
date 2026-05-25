@@ -1,0 +1,22 @@
+node,label,in_degree,out_degree,degree
+Exchange_Rate__t,Exchange Rate (t),9,0,9
+Government_Debt__t,Government Debt (t),9,0,9
+Reserves__t,Reserves (t),8,0,8
+Capital_Formation__t,Capital Formation (t),6,0,6
+Capital_Formation__t-1,Capital Formation (t-1),0,5,5
+GDP_Growth__t,GDP Growth (t),5,0,5
+Exchange_Rate__t-1,Exchange Rate (t-1),0,4,4
+Government_Debt__t-1,Government Debt (t-1),0,4,4
+Capital_Formation__t-2,Capital Formation (t-2),0,3,3
+Exchange_Rate__t-2,Exchange Rate (t-2),0,3,3
+Exchange_Rate__t-3,Exchange Rate (t-3),0,3,3
+Government_Debt__t-2,Government Debt (t-2),0,3,3
+Government_Debt__t-3,Government Debt (t-3),0,3,3
+Reserves__t-1,Reserves (t-1),0,3,3
+Capital_Formation__t-3,Capital Formation (t-3),0,2,2
+Reserves__t-2,Reserves (t-2),0,2,2
+Inflation__t,Inflation (t),2,0,2
+GDP_Growth__t-3,GDP Growth (t-3),0,1,1
+Inflation__t-1,Inflation (t-1),0,1,1
+Reserves__t-3,Reserves (t-3),0,1,1
+Trade_Balance__t-3,Trade Balance (t-3),0,1,1

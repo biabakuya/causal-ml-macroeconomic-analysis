@@ -1,0 +1,2 @@
+Country: France
+Cointegration Rank (95%): 3

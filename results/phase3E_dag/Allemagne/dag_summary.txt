@@ -1,0 +1,20 @@
+PHASE 3E — DAG SUMMARY
+Country: Allemagne
+min_support: 1
+Filtered edges: 46
+Removed cycles: 0
+Edges support table: 3
+Edges final DAG: 3
+
+=== FINAL EDGES ===
+              source        target  support  methods  weight_sum sign_majority
+       Reserves__t-1 GDP_Growth__t        1  var_irf   38.365959      positive
+Government_Debt__t-1 GDP_Growth__t        1  var_irf   26.900370      positive
+  Exchange_Rate__t-1 GDP_Growth__t        1 var_fevd    0.210276       unknown
+
+=== NODE METRICS ===
+                node                 label  in_degree  out_degree  degree
+       GDP_Growth__t        GDP Growth (t)          3           0       3
+  Exchange_Rate__t-1   Exchange Rate (t-1)          0           1       1
+Government_Debt__t-1 Government Debt (t-1)          0           1       1
+       Reserves__t-1        Reserves (t-1)          0           1       1

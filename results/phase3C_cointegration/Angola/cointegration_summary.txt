@@ -1,0 +1,2 @@
+Country: Angola
+Cointegration Rank (95%): 7

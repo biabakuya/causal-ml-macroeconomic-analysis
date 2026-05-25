@@ -1,0 +1,7 @@
+source,target,support,methods,weight_sum,sign_majority
+Government_Debt__t-1,GDP_Growth__t,2,"var_fevd,var_irf",73.30247624837952,positive
+Capital_Formation__t-1,GDP_Growth__t,1,var_irf,72.32968730606778,positive
+Exchange_Rate__t-2,Government_Debt__t,1,pcmci,0.5868791725989869,positive
+Exchange_Rate__t-1,Government_Debt__t,1,pcmci,0.5621487860264952,positive
+Government_Debt__t-1,Exchange_Rate__t,1,pcmci,0.5042540491843899,positive
+Exchange_Rate__t-1,GDP_Growth__t,1,var_fevd,0.1296751046848969,unknown

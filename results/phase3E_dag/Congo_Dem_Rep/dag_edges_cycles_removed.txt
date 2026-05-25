@@ -1,0 +1,50 @@
+ARÊTES SUPPRIMÉES POUR RÉSOLUTION DES CYCLES
+================================================================================
+
+Total supprimé : 15
+
+Capital_Formation_lag1 → Capital_Formation_lag1 (support=2, weight=1.18)
+  Cycle: Capital_Formation_lag1 → Capital_Formation_lag1
+
+Trade_Balance_lag1 → Trade_Balance_lag1 (support=2, weight=1.00)
+  Cycle: Trade_Balance_lag1 → Trade_Balance_lag1
+
+Exchange_Rate_lag1 → Exchange_Rate_lag1 (support=3, weight=1.43)
+  Cycle: Exchange_Rate_lag1 → Exchange_Rate_lag1
+
+Reserves_lag1 → Reserves_lag1 (support=1, weight=1.47)
+  Cycle: Reserves_lag1 → Reserves_lag1
+
+Inflation_lag1 → Inflation_lag1 (support=2, weight=1.05)
+  Cycle: Inflation_lag1 → Inflation_lag1
+
+Government_Debt_lag1 → Government_Debt_lag1 (support=2, weight=0.53)
+  Cycle: Government_Debt_lag1 → Government_Debt_lag1
+
+GDP_Growth → GDP_Growth (support=1, weight=0.85)
+  Cycle: GDP_Growth → GDP_Growth
+
+Reserves_lag1 → Government_Debt_lag1 (support=1, weight=4.71)
+  Cycle: Reserves_lag1 → Government_Debt_lag1 → Exchange_Rate_lag1 → Reserves_lag1
+
+Reserves_lag1 → Capital_Formation_lag1 (support=1, weight=0.16)
+  Cycle: Reserves_lag1 → Capital_Formation_lag1 → Trade_Balance_lag1 → Inflation_lag1 → Exchange_Rate_lag1 → Reserves_lag1
+
+Inflation_lag1 → Exchange_Rate_lag1 (support=1, weight=0.33)
+  Cycle: Trade_Balance_lag1 → Inflation_lag1 → Exchange_Rate_lag1 → Government_Debt_lag1 → Trade_Balance_lag1
+
+Inflation_lag1 → Government_Debt_lag1 (support=1, weight=0.19)
+  Cycle: Trade_Balance_lag1 → Inflation_lag1 → Government_Debt_lag1 → Exchange_Rate_lag1 → Trade_Balance_lag1
+
+Exchange_Rate_lag1 → Trade_Balance_lag1 (support=1, weight=1.52)
+  Cycle: Trade_Balance_lag1 → Government_Debt_lag1 → Exchange_Rate_lag1 → Trade_Balance_lag1
+
+Government_Debt_lag1 → Trade_Balance_lag1 (support=1, weight=0.52)
+  Cycle: Trade_Balance_lag1 → Government_Debt_lag1 → Trade_Balance_lag1
+
+Trade_Balance_lag1 → Capital_Formation_lag1 (support=1, weight=0.19)
+  Cycle: Trade_Balance_lag1 → Capital_Formation_lag1 → Trade_Balance_lag1
+
+Exchange_Rate_lag1 → Government_Debt_lag1 (support=2, weight=2.29)
+  Cycle: Government_Debt_lag1 → Exchange_Rate_lag1 → Government_Debt_lag1
+

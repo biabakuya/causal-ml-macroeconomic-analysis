@@ -1,0 +1,8 @@
+ARÊTES SUPPRIMÉES POUR RÉSOLUTION DES CYCLES
+================================================================================
+
+Total supprimé : 1
+
+Capital_Formation__t-1 → Inflation__t-1 (support=2, weight=3.80)
+  Cycle: Capital_Formation__t-1 → Inflation__t-1 → Capital_Formation__t-1
+

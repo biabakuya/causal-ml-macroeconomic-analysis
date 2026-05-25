@@ -1,0 +1,19 @@
+STABILITY CHECK
+- is_stable() : False
+- Roots (VAR characteristic roots):
+  01: root=0.005864-2.521684j | abs=2.521691
+  02: root=0.005864+2.521684j | abs=2.521691
+  03: root=0.357625-1.296952j | abs=1.345355
+  04: root=0.357625+1.296952j | abs=1.345355
+  05: root=1.067268-0.663062j | abs=1.256468
+  06: root=1.067268+0.663062j | abs=1.256468
+  07: root=-1.215146-0.000000j | abs=1.215146
+  08: root=-1.173686-0.000000j | abs=1.173686
+  09: root=0.730899+0.906034j | abs=1.164093
+  10: root=0.730899-0.906034j | abs=1.164093
+  11: root=-0.708817-0.893035j | abs=1.140146
+  12: root=-0.708817+0.893035j | abs=1.140146
+  13: root=1.091396-0.000000j | abs=1.091396
+  14: root=0.936262-0.000000j | abs=0.936262
+
+NOTE: statsmodels stability uses companion matrix eigenvalues.

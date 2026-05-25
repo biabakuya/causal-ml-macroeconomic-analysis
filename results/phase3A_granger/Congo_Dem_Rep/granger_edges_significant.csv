@@ -1,0 +1,11 @@
+Country,Cause,Effect,p_value_min,best_lag
+"Congo, Dem. Rep.",GDP_Growth,Exchange_Rate_lag1,0.0008070605740335254,1
+"Congo, Dem. Rep.",Government_Debt_lag1,Exchange_Rate_lag1,0.004027854929175979,1
+"Congo, Dem. Rep.",GDP_Growth,Government_Debt_lag1,0.01011202481601917,3
+"Congo, Dem. Rep.",Reserves_lag1,Government_Debt_lag1,0.010620052292098966,1
+"Congo, Dem. Rep.",Trade_Balance_lag1,Government_Debt_lag1,0.012091371427467102,2
+"Congo, Dem. Rep.",Exchange_Rate_lag1,Government_Debt_lag1,0.02422172745341368,1
+"Congo, Dem. Rep.",Exchange_Rate_lag1,Reserves_lag1,0.024950949705231505,2
+"Congo, Dem. Rep.",Trade_Balance_lag1,Inflation_lag1,0.02916564894705405,2
+"Congo, Dem. Rep.",Capital_Formation_lag1,Inflation_lag1,0.03789352553943213,1
+"Congo, Dem. Rep.",Government_Debt_lag1,Inflation_lag1,0.039867922374339004,3

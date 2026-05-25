@@ -1,0 +1,26 @@
+PHASE 3E — DAG SUMMARY
+Country: France
+min_support: 1
+Filtered edges: 48
+Removed cycles: 0
+Edges support table: 6
+Edges final DAG: 6
+
+=== FINAL EDGES ===
+                source             target  support          methods  weight_sum sign_majority
+  Government_Debt__t-1      GDP_Growth__t        2 var_fevd,var_irf   73.302476      positive
+Capital_Formation__t-1      GDP_Growth__t        1          var_irf   72.329687      positive
+    Exchange_Rate__t-2 Government_Debt__t        1            pcmci    0.586879      positive
+    Exchange_Rate__t-1 Government_Debt__t        1            pcmci    0.562149      positive
+  Government_Debt__t-1   Exchange_Rate__t        1            pcmci    0.504254      positive
+    Exchange_Rate__t-1      GDP_Growth__t        1         var_fevd    0.129675       unknown
+
+=== NODE METRICS ===
+                  node                   label  in_degree  out_degree  degree
+         GDP_Growth__t          GDP Growth (t)          3           0       3
+    Exchange_Rate__t-1     Exchange Rate (t-1)          0           2       2
+  Government_Debt__t-1   Government Debt (t-1)          0           2       2
+    Government_Debt__t     Government Debt (t)          2           0       2
+Capital_Formation__t-1 Capital Formation (t-1)          0           1       1
+    Exchange_Rate__t-2     Exchange Rate (t-2)          0           1       1
+      Exchange_Rate__t       Exchange Rate (t)          1           0       1

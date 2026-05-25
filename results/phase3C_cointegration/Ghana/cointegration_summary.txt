@@ -1,0 +1,2 @@
+Country: Ghana
+Cointegration Rank (95%): 4

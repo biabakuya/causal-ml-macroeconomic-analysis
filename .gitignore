@@ -1,0 +1,40 @@
+# Environnement virtuel
+venv_stage/
+env/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Données (ne pas versionner les données sensibles)
+data/raw/*.csv
+data/raw/*.xlsx
+data/processed/*.csv
+
+# Résultats (fichiers volumineux)
+*.pkl
+*.pickle
+*.joblib
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Rapports temporaires
+outputs/temp/

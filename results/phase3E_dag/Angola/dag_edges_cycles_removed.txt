@@ -1,0 +1,11 @@
+ARÊTES SUPPRIMÉES POUR RÉSOLUTION DES CYCLES
+================================================================================
+
+Total supprimé : 2
+
+Inflation__t-1 → Exchange_Rate__t-1 (support=2, weight=1.76)
+  Cycle: Inflation__t-1 → Exchange_Rate__t-1 → Capital_Formation__t-1 → Inflation__t-1
+
+Trade_Balance__t-1 → Exchange_Rate__t-1 (support=2, weight=1.79)
+  Cycle: Capital_Formation__t-1 → Trade_Balance__t-1 → Exchange_Rate__t-1 → Capital_Formation__t-1
+

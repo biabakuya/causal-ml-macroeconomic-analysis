@@ -1,0 +1,48 @@
+PHASE 3D — PCMCI SUMMARY
+Country: Ghana
+Input: ..\data\processed\pcmci_Ghana.csv
+Observations: 25
+Variables: ['GDP_Growth', 'Capital_Formation', 'Inflation', 'Government_Debt', 'Trade_Balance', 'Exchange_Rate', 'Reserves']
+tau_min: 1
+tau_max: 3
+pc_alpha: 0.05
+alpha (links): 0.05
+independence_test: CMIknn (shuffle_test, knn=5)
+fdr_method: fdr_bh
+Significant links (lag>=1, without self-loops): 34
+
+           source            target  lag  p_value      val     sign
+  Government_Debt Capital_Formation    1 0.009169 0.644649 positive
+    Exchange_Rate Capital_Formation    1 0.009169 0.579569 positive
+    Exchange_Rate Capital_Formation    2 0.009169 0.610939 positive
+    Exchange_Rate Capital_Formation    3 0.009169 0.564323 positive
+  Government_Debt Capital_Formation    2 0.015860 0.515827 positive
+  Government_Debt Capital_Formation    3 0.015860 0.546445 positive
+Capital_Formation     Exchange_Rate    1 0.009169 0.553922 positive
+  Government_Debt     Exchange_Rate    1 0.009169 1.252063 positive
+         Reserves     Exchange_Rate    1 0.009169 0.614759 positive
+Capital_Formation     Exchange_Rate    2 0.009169 0.553922 positive
+  Government_Debt     Exchange_Rate    2 0.009169 1.252063 positive
+         Reserves     Exchange_Rate    2 0.009169 0.614759 positive
+  Government_Debt     Exchange_Rate    3 0.009169 1.252063 positive
+         Reserves     Exchange_Rate    3 0.009169 0.614759 positive
+Capital_Formation     Exchange_Rate    3 0.015860 0.553922 positive
+Capital_Formation   Government_Debt    1 0.009169 0.553149 positive
+    Exchange_Rate   Government_Debt    1 0.009169 1.201186 positive
+Capital_Formation   Government_Debt    2 0.009169 0.457571 positive
+    Exchange_Rate   Government_Debt    2 0.009169 1.101894 positive
+    Trade_Balance   Government_Debt    3 0.009169 0.399436 positive
+    Exchange_Rate   Government_Debt    3 0.009169 0.929278 positive
+         Reserves   Government_Debt    2 0.015860 0.500553 positive
+         Reserves   Government_Debt    1 0.022006 0.539324 positive
+Capital_Formation   Government_Debt    3 0.040941 0.374969 positive
+       GDP_Growth         Inflation    3 0.040941 0.281890 positive
+Capital_Formation         Inflation    1 0.046679 0.278582 positive
+  Government_Debt          Reserves    1 0.009169 0.616594 positive
+    Exchange_Rate          Reserves    1 0.009169 0.784208 positive
+Capital_Formation          Reserves    2 0.009169 0.530761 positive
+  Government_Debt          Reserves    2 0.009169 0.753650 positive
+    Exchange_Rate          Reserves    2 0.009169 0.944399 positive
+  Government_Debt          Reserves    3 0.009169 1.020484 positive
+    Exchange_Rate          Reserves    3 0.009169 1.103003 positive
+Capital_Formation          Reserves    1 0.028626 0.338717 positive

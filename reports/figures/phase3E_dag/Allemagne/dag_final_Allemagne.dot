@@ -1,0 +1,31 @@
+digraph DAG {
+	bgcolor=white fontsize=22 label="DAG Final — Allemagne (support ≥ 1, acyclic)" labelloc=t pad=0.25 rankdir=LR
+	graph [concentrate=false nodesep=0.7 overlap=false ranksep=1.0 splines=polyline]
+	node [color="#1f2937" fontname=Helvetica fontsize=12 shape=ellipse style=filled]
+	edge [arrowsize=0.8 fontname=Helvetica fontsize=9]
+	subgraph cluster_t1 {
+		color="#d1d5db" fontsize=11 label="Lag t-1"
+		rank=same
+		"Exchange_Rate__t-1" [label="Exchange Rate (t-1)" fillcolor="#bfdbfe" fixedsize=true fontcolor=black height=0.75 width=1.4]
+		"Government_Debt__t-1" [label="Government Debt (t-1)" fillcolor="#bfdbfe" fixedsize=true fontcolor=black height=0.75 width=1.4]
+		"Reserves__t-1" [label="Reserves (t-1)" fillcolor="#bfdbfe" fixedsize=true fontcolor=black height=0.75 width=1.4]
+	}
+	subgraph cluster_t {
+		color="#d1d5db" fontsize=11 label="Current time t"
+		rank=same
+		GDP_Growth__t [label="GDP Growth (t)" fillcolor="#facc15" fixedsize=true fontcolor=black height=0.8 width=1.58]
+	}
+	"Reserves__t-1" -> GDP_Growth__t [label="s=1" color="#16a34a" minlen=2 penwidth=1.4]
+	"Government_Debt__t-1" -> GDP_Growth__t [label="s=1" color="#16a34a" minlen=2 penwidth=1.4]
+	"Exchange_Rate__t-1" -> GDP_Growth__t [label="s=1" color="#9ca3af" minlen=2 penwidth=1.4]
+	subgraph cluster_legend {
+		color="#d1d5db" fontsize=11 label="Légende"
+		Lpos [label="Lien positif" color="#16a34a" fillcolor=white shape=box style=filled]
+		Lneg [label="Lien négatif" color="#dc2626" fillcolor=white shape=box style=filled]
+		Lmix [label="Lien mixte" color="#d97706" fillcolor=white shape=box style=filled]
+		Lunk [label="Signe inconnu" color="#9ca3af" fillcolor=white shape=box style=filled]
+		Lpos -> Lneg [style=invis]
+		Lneg -> Lmix [style=invis]
+		Lmix -> Lunk [style=invis]
+	}
+}

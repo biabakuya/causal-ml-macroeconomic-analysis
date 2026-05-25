@@ -1,0 +1,8 @@
+node,label,in_degree,out_degree,degree
+GDP_Growth__t,GDP Growth (t),3,0,3
+Exchange_Rate__t-1,Exchange Rate (t-1),0,2,2
+Government_Debt__t-1,Government Debt (t-1),0,2,2
+Government_Debt__t,Government Debt (t),2,0,2
+Capital_Formation__t-1,Capital Formation (t-1),0,1,1
+Exchange_Rate__t-2,Exchange Rate (t-2),0,1,1
+Exchange_Rate__t,Exchange Rate (t),1,0,1

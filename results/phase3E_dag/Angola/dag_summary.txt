@@ -1,0 +1,26 @@
+PHASE 3E — DAG SUMMARY
+Country: Angola
+min_support: 1
+Filtered edges: 49
+Removed cycles: 0
+Edges support table: 6
+Edges final DAG: 6
+
+=== FINAL EDGES ===
+                source        target  support          methods  weight_sum sign_majority
+  Government_Debt__t-1 GDP_Growth__t        2  granger,var_irf   29.607165      negative
+        Inflation__t-1 GDP_Growth__t        2 granger,var_fevd    1.900847       unknown
+         Reserves__t-1 GDP_Growth__t        1          granger   42.879747       unknown
+Capital_Formation__t-1 GDP_Growth__t        1          var_irf   14.107000      positive
+    Exchange_Rate__t-1 GDP_Growth__t        1          granger    1.389257       unknown
+    Trade_Balance__t-1 GDP_Growth__t        1         var_fevd    0.125440       unknown
+
+=== NODE METRICS ===
+                  node                   label  in_degree  out_degree  degree
+         GDP_Growth__t          GDP Growth (t)          6           0       6
+Capital_Formation__t-1 Capital Formation (t-1)          0           1       1
+    Exchange_Rate__t-1     Exchange Rate (t-1)          0           1       1
+  Government_Debt__t-1   Government Debt (t-1)          0           1       1
+        Inflation__t-1         Inflation (t-1)          0           1       1
+         Reserves__t-1          Reserves (t-1)          0           1       1
+    Trade_Balance__t-1     Trade Balance (t-1)          0           1       1

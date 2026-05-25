@@ -1,0 +1,26 @@
+PHASE 3E — DAG SUMMARY
+Country: Congo, Dem. Rep.
+min_support: 1
+Filtered edges: 41
+Removed cycles: 0
+Edges support table: 5
+Edges final DAG: 5
+
+=== FINAL EDGES ===
+              source           target  support methods  weight_sum sign_majority
+  Exchange_Rate__t-1    GDP_Growth__t        1 var_irf    2.082815      positive
+Government_Debt__t-1    GDP_Growth__t        1 var_irf    1.919407      positive
+  Exchange_Rate__t-2      Reserves__t        1   pcmci    0.492683      positive
+  Trade_Balance__t-3 Exchange_Rate__t        1   pcmci    0.453221      positive
+  Exchange_Rate__t-3      Reserves__t        1   pcmci    0.449165      positive
+
+=== NODE METRICS ===
+                node                 label  in_degree  out_degree  degree
+       GDP_Growth__t        GDP Growth (t)          2           0       2
+         Reserves__t          Reserves (t)          2           0       2
+  Exchange_Rate__t-1   Exchange Rate (t-1)          0           1       1
+  Exchange_Rate__t-2   Exchange Rate (t-2)          0           1       1
+  Exchange_Rate__t-3   Exchange Rate (t-3)          0           1       1
+Government_Debt__t-1 Government Debt (t-1)          0           1       1
+  Trade_Balance__t-3   Trade Balance (t-3)          0           1       1
+    Exchange_Rate__t     Exchange Rate (t)          1           0       1

@@ -1,0 +1,7 @@
+source,target,support,methods,weight_sum,sign_majority
+Government_Debt__t-1,GDP_Growth__t,2,"granger,var_irf",29.607164897544056,negative
+Inflation__t-1,GDP_Growth__t,2,"granger,var_fevd",1.9008467753744327,unknown
+Reserves__t-1,GDP_Growth__t,1,granger,42.879746978852346,unknown
+Capital_Formation__t-1,GDP_Growth__t,1,var_irf,14.106999823070732,positive
+Exchange_Rate__t-1,GDP_Growth__t,1,granger,1.3892567324294,unknown
+Trade_Balance__t-1,GDP_Growth__t,1,var_fevd,0.1254397970880378,unknown

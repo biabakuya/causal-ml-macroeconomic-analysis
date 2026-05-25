@@ -1,0 +1,22 @@
+PHASE 3A — GRANGER (par pays)
+============================================================
+Country   : Ghana
+Input     : ..\data\processed\data_transformed_unscaled_lagged.csv
+Obs (T)   : 24
+Vars (N)  : 7
+Alpha     : 0.05
+Max lag   : 3
+
+Edges significatives (p < alpha) : 9
+
+Top 20 edges (p croissant):
+Country                  Cause                 Effect  p_value_min  best_lag
+  Ghana Capital_Formation_lag1   Government_Debt_lag1     0.000814         1
+  Ghana Capital_Formation_lag1     Exchange_Rate_lag1     0.002928         1
+  Ghana     Exchange_Rate_lag1 Capital_Formation_lag1     0.003371         1
+  Ghana     Exchange_Rate_lag1   Government_Debt_lag1     0.004409         1
+  Ghana   Government_Debt_lag1     Trade_Balance_lag1     0.011608         1
+  Ghana          Reserves_lag1   Government_Debt_lag1     0.012306         1
+  Ghana   Government_Debt_lag1             GDP_Growth     0.019382         3
+  Ghana         Inflation_lag1   Government_Debt_lag1     0.039304         1
+  Ghana         Inflation_lag1     Trade_Balance_lag1     0.047622         1

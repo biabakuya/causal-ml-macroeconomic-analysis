@@ -1,0 +1,73 @@
+PHASE 3E — DAG SUMMARY
+Country: Ghana
+min_support: 1
+Filtered edges: 36
+Removed cycles: 0
+Edges support table: 39
+Edges final DAG: 39
+
+=== FINAL EDGES ===
+                source               target  support                  methods  weight_sum sign_majority
+  Government_Debt__t-1        GDP_Growth__t        3 granger,var_fevd,var_irf   15.127791      positive
+    Exchange_Rate__t-1        GDP_Growth__t        1                  var_irf   24.557797      positive
+  Government_Debt__t-1     Exchange_Rate__t        1                    pcmci    1.252063      positive
+  Government_Debt__t-2     Exchange_Rate__t        1                    pcmci    1.252063      positive
+  Government_Debt__t-3     Exchange_Rate__t        1                    pcmci    1.252063      positive
+    Exchange_Rate__t-1   Government_Debt__t        1                    pcmci    1.201186      positive
+    Exchange_Rate__t-3          Reserves__t        1                    pcmci    1.103003      positive
+    Exchange_Rate__t-2   Government_Debt__t        1                    pcmci    1.101894      positive
+  Government_Debt__t-3          Reserves__t        1                    pcmci    1.020484      positive
+    Exchange_Rate__t-2          Reserves__t        1                    pcmci    0.944399      positive
+    Exchange_Rate__t-3   Government_Debt__t        1                    pcmci    0.929278      positive
+    Exchange_Rate__t-1          Reserves__t        1                    pcmci    0.784208      positive
+  Government_Debt__t-2          Reserves__t        1                    pcmci    0.753650      positive
+  Government_Debt__t-1 Capital_Formation__t        1                    pcmci    0.644649      positive
+  Government_Debt__t-1          Reserves__t        1                    pcmci    0.616594      positive
+         Reserves__t-1     Exchange_Rate__t        1                    pcmci    0.614759      positive
+         Reserves__t-2     Exchange_Rate__t        1                    pcmci    0.614759      positive
+         Reserves__t-3     Exchange_Rate__t        1                    pcmci    0.614759      positive
+    Exchange_Rate__t-2 Capital_Formation__t        1                    pcmci    0.610939      positive
+    Exchange_Rate__t-1 Capital_Formation__t        1                    pcmci    0.579569      positive
+    Exchange_Rate__t-3 Capital_Formation__t        1                    pcmci    0.564323      positive
+Capital_Formation__t-1     Exchange_Rate__t        1                    pcmci    0.553922      positive
+Capital_Formation__t-2     Exchange_Rate__t        1                    pcmci    0.553922      positive
+Capital_Formation__t-3     Exchange_Rate__t        1                    pcmci    0.553922      positive
+Capital_Formation__t-1   Government_Debt__t        1                    pcmci    0.553149      positive
+  Government_Debt__t-3 Capital_Formation__t        1                    pcmci    0.546445      positive
+         Reserves__t-1   Government_Debt__t        1                    pcmci    0.539324      positive
+Capital_Formation__t-2          Reserves__t        1                    pcmci    0.530761      positive
+  Government_Debt__t-2 Capital_Formation__t        1                    pcmci    0.515827      positive
+         Reserves__t-2   Government_Debt__t        1                    pcmci    0.500553      positive
+Capital_Formation__t-2   Government_Debt__t        1                    pcmci    0.457571      positive
+    Trade_Balance__t-3   Government_Debt__t        1                    pcmci    0.399436      positive
+Capital_Formation__t-1        GDP_Growth__t        1                 var_fevd    0.380729       unknown
+Capital_Formation__t-3   Government_Debt__t        1                    pcmci    0.374969      positive
+Capital_Formation__t-1          Reserves__t        1                    pcmci    0.338717      positive
+       GDP_Growth__t-3         Inflation__t        1                    pcmci    0.281890      positive
+Capital_Formation__t-1         Inflation__t        1                    pcmci    0.278582      positive
+        Inflation__t-1        GDP_Growth__t        1                 var_fevd    0.250977       unknown
+         Reserves__t-1        GDP_Growth__t        1                 var_fevd    0.123239       unknown
+
+=== NODE METRICS ===
+                  node                   label  in_degree  out_degree  degree
+      Exchange_Rate__t       Exchange Rate (t)          9           0       9
+    Government_Debt__t     Government Debt (t)          9           0       9
+           Reserves__t            Reserves (t)          8           0       8
+  Capital_Formation__t   Capital Formation (t)          6           0       6
+Capital_Formation__t-1 Capital Formation (t-1)          0           5       5
+         GDP_Growth__t          GDP Growth (t)          5           0       5
+    Exchange_Rate__t-1     Exchange Rate (t-1)          0           4       4
+  Government_Debt__t-1   Government Debt (t-1)          0           4       4
+Capital_Formation__t-2 Capital Formation (t-2)          0           3       3
+    Exchange_Rate__t-2     Exchange Rate (t-2)          0           3       3
+    Exchange_Rate__t-3     Exchange Rate (t-3)          0           3       3
+  Government_Debt__t-2   Government Debt (t-2)          0           3       3
+  Government_Debt__t-3   Government Debt (t-3)          0           3       3
+         Reserves__t-1          Reserves (t-1)          0           3       3
+Capital_Formation__t-3 Capital Formation (t-3)          0           2       2
+         Reserves__t-2          Reserves (t-2)          0           2       2
+          Inflation__t           Inflation (t)          2           0       2
+       GDP_Growth__t-3        GDP Growth (t-3)          0           1       1
+        Inflation__t-1         Inflation (t-1)          0           1       1
+         Reserves__t-3          Reserves (t-3)          0           1       1
+    Trade_Balance__t-3     Trade Balance (t-3)          0           1       1

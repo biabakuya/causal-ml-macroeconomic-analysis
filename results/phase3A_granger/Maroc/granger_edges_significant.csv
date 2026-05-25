@@ -1,0 +1,13 @@
+Country,Cause,Effect,p_value_min,best_lag
+Maroc,GDP_Growth,Government_Debt_lag1,9.064203799216145e-06,2
+Maroc,Capital_Formation_lag1,Trade_Balance_lag1,0.00010906227369351626,1
+Maroc,Government_Debt_lag1,Reserves_lag1,0.0029949604660152026,3
+Maroc,Trade_Balance_lag1,Government_Debt_lag1,0.0049267032526235256,1
+Maroc,Exchange_Rate_lag1,Trade_Balance_lag1,0.006957626351363692,1
+Maroc,Reserves_lag1,Trade_Balance_lag1,0.007528796717075819,1
+Maroc,Trade_Balance_lag1,Exchange_Rate_lag1,0.01418578098768405,3
+Maroc,Government_Debt_lag1,Exchange_Rate_lag1,0.01476662558183848,3
+Maroc,Government_Debt_lag1,Trade_Balance_lag1,0.02757045152234192,1
+Maroc,Exchange_Rate_lag1,Reserves_lag1,0.036204984769057265,1
+Maroc,Inflation_lag1,Government_Debt_lag1,0.03787407566430569,1
+Maroc,Trade_Balance_lag1,Capital_Formation_lag1,0.04290556062234807,1

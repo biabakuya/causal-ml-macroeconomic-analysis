@@ -1,0 +1,33 @@
+PHASE 3A — GRANGER (par pays)
+============================================================
+Country   : Angola
+Input     : ..\data\processed\data_transformed_unscaled_lagged.csv
+Obs (T)   : 24
+Vars (N)  : 7
+Alpha     : 0.05
+Max lag   : 3
+
+Edges significatives (p < alpha) : 24
+
+Top 20 edges (p croissant):
+Country                  Cause                 Effect  p_value_min  best_lag
+ Angola         Inflation_lag1          Reserves_lag1     0.000147         1
+ Angola   Government_Debt_lag1     Exchange_Rate_lag1     0.000250         1
+ Angola             GDP_Growth   Government_Debt_lag1     0.000305         1
+ Angola          Reserves_lag1             GDP_Growth     0.001166         2
+ Angola   Government_Debt_lag1             GDP_Growth     0.002959         3
+ Angola             GDP_Growth     Trade_Balance_lag1     0.003117         2
+ Angola   Government_Debt_lag1          Reserves_lag1     0.004317         1
+ Angola             GDP_Growth Capital_Formation_lag1     0.006453         2
+ Angola             GDP_Growth     Exchange_Rate_lag1     0.010971         1
+ Angola     Exchange_Rate_lag1 Capital_Formation_lag1     0.012952         1
+ Angola          Reserves_lag1     Exchange_Rate_lag1     0.014249         2
+ Angola     Trade_Balance_lag1         Inflation_lag1     0.021470         1
+ Angola             GDP_Growth         Inflation_lag1     0.023879         1
+ Angola          Reserves_lag1   Government_Debt_lag1     0.024408         1
+ Angola Capital_Formation_lag1         Inflation_lag1     0.026457         3
+ Angola          Reserves_lag1         Inflation_lag1     0.026791         2
+ Angola     Exchange_Rate_lag1         Inflation_lag1     0.027207         2
+ Angola         Inflation_lag1             GDP_Growth     0.028154         1
+ Angola     Trade_Balance_lag1     Exchange_Rate_lag1     0.031209         1
+ Angola             GDP_Growth          Reserves_lag1     0.032120         1

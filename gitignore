@@ -1,0 +1,137 @@
+# =============================================================================
+# .gitignore - Stage ABIL 2025
+# Fichiers et dossiers à ne PAS versionner avec Git
+# =============================================================================
+
+# ─────────────────────────────────────────────────────────────────────────────
+# ENVIRONNEMENTS VIRTUELS
+# ─────────────────────────────────────────────────────────────────────────────
+venv_stage/
+venv/
+env/
+ENV/
+.venv/
+
+# ─────────────────────────────────────────────────────────────────────────────
+# PYTHON
+# ─────────────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ─────────────────────────────────────────────────────────────────────────────
+# JUPYTER NOTEBOOK
+# ─────────────────────────────────────────────────────────────────────────────
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+profile_default/
+ipython_config.py
+
+# ─────────────────────────────────────────────────────────────────────────────
+# DONNÉES (Ne pas versionner les données brutes pour éviter fichiers volumineux)
+# ─────────────────────────────────────────────────────────────────────────────
+data/raw/*.csv
+data/raw/*.xlsx
+data/raw/*.xls
+data/processed/*.csv
+data/processed/*.xlsx
+
+# Exceptions : Vous pouvez versionner de petits datasets exemples
+!data/raw/example_*.csv
+
+# ─────────────────────────────────────────────────────────────────────────────
+# MODÈLES ET RÉSULTATS (Fichiers volumineux)
+# ─────────────────────────────────────────────────────────────────────────────
+*.pkl
+*.pickle
+*.joblib
+*.h5
+*.hdf5
+models/*.pkl
+models/*.joblib
+
+# ─────────────────────────────────────────────────────────────────────────────
+# OUTPUTS (Sauf si vous voulez versionner les figures)
+# ─────────────────────────────────────────────────────────────────────────────
+# Décommentez si vous ne voulez pas versionner les outputs
+# outputs/figures/*.png
+# outputs/figures/*.jpg
+# outputs/tables/*.csv
+# outputs/reports/*.pdf
+
+# ─────────────────────────────────────────────────────────────────────────────
+# IDE ET ÉDITEURS
+# ─────────────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# ─────────────────────────────────────────────────────────────────────────────
+# SYSTÈME D'EXPLOITATION
+# ─────────────────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ─────────────────────────────────────────────────────────────────────────────
+# LOGS ET BASES DE DONNÉES
+# ─────────────────────────────────────────────────────────────────────────────
+*.log
+*.sql
+*.sqlite
+*.db
+
+# ─────────────────────────────────────────────────────────────────────────────
+# RAPPORTS TEMPORAIRES
+# ─────────────────────────────────────────────────────────────────────────────
+outputs/temp/
+temp/
+tmp/
+
+# ─────────────────────────────────────────────────────────────────────────────
+# AUTRES
+# ─────────────────────────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+.hypothesis/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ─────────────────────────────────────────────────────────────────────────────
+# FICHIERS SPÉCIFIQUES AU PROJET
+# ─────────────────────────────────────────────────────────────────────────────
+# Ajoutez ici des fichiers spécifiques à ignorer
+secrets.py
+config_local.py
+.env

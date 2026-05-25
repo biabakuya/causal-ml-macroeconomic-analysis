@@ -1,0 +1,20 @@
+PHASE 3E — DAG SUMMARY
+Country: Maroc
+min_support: 1
+Filtered edges: 49
+Removed cycles: 0
+Edges support table: 3
+Edges final DAG: 3
+
+=== FINAL EDGES ===
+                source        target  support          methods  weight_sum sign_majority
+  Government_Debt__t-1 GDP_Growth__t        2 var_fevd,var_irf   56.861341      negative
+    Exchange_Rate__t-1 GDP_Growth__t        1          var_irf   34.500755      negative
+Capital_Formation__t-1 GDP_Growth__t        1         var_fevd    0.121316       unknown
+
+=== NODE METRICS ===
+                  node                   label  in_degree  out_degree  degree
+         GDP_Growth__t          GDP Growth (t)          3           0       3
+Capital_Formation__t-1 Capital Formation (t-1)          0           1       1
+    Exchange_Rate__t-1     Exchange Rate (t-1)          0           1       1
+  Government_Debt__t-1   Government Debt (t-1)          0           1       1

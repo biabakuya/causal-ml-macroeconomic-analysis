@@ -1,0 +1,10 @@
+variable,type,unit,description,transform,winsorization,standardization
+Country,categorical,-,Country name,none,none,none
+Year,time,year,Year,none,none,none
+GDP_Growth,numeric,% (annual),Real GDP growth rate (annual %),level,by_country (0.01-0.99),z-score
+Capital_Formation,numeric,% of GDP,Gross capital formation (% of GDP),log,by_country (0.01-0.99),z-score
+Inflation,numeric,% (annual),Inflation rate (annual %),log1p,by_country (0.01-0.99),z-score
+Government_Debt,numeric,% of GDP,General government gross debt (% of GDP),log,by_country (0.01-0.99),z-score
+Trade_Balance,numeric,% of GDP (or comparable),Trade balance indicator (as provided by source),level,by_country (0.01-0.99),z-score
+Exchange_Rate,numeric,local currency per USD (or comparable),Exchange rate indicator (source IMF/IFS),log,by_country (0.01-0.99),z-score
+Reserves,numeric,USD (or comparable),International reserves (source IMF/IFS),log,by_country (0.01-0.99),z-score

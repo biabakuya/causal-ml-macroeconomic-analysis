@@ -1,0 +1,11 @@
+ARÊTES SUPPRIMÉES POUR RÉSOLUTION DES CYCLES
+================================================================================
+
+Total supprimé : 2
+
+Trade_Balance__t-1 → Reserves__t-1 (support=2, weight=2.34)
+  Cycle: Capital_Formation__t-1 → Trade_Balance__t-1 → Reserves__t-1 → Capital_Formation__t-1
+
+Capital_Formation__t-1 → Reserves__t-1 (support=2, weight=0.50)
+  Cycle: Capital_Formation__t-1 → Reserves__t-1 → Capital_Formation__t-1
+

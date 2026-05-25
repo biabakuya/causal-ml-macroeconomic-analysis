@@ -1,0 +1,6 @@
+source,target,support,methods,weight_sum,sign_majority
+Exchange_Rate__t-1,GDP_Growth__t,1,var_irf,2.0828149370700157,positive
+Government_Debt__t-1,GDP_Growth__t,1,var_irf,1.9194071879218,positive
+Exchange_Rate__t-2,Reserves__t,1,pcmci,0.4926830341046027,positive
+Trade_Balance__t-3,Exchange_Rate__t,1,pcmci,0.4532209529758548,positive
+Exchange_Rate__t-3,Reserves__t,1,pcmci,0.4491645155860841,positive

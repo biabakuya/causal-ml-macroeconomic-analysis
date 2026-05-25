@@ -1,0 +1,23 @@
+PHASE 3A — GRANGER (par pays)
+============================================================
+Country   : France
+Input     : ..\data\processed\data_transformed_unscaled_lagged.csv
+Obs (T)   : 24
+Vars (N)  : 7
+Alpha     : 0.05
+Max lag   : 3
+
+Edges significatives (p < alpha) : 10
+
+Top 20 edges (p croissant):
+Country                Cause                 Effect  p_value_min  best_lag
+ France           GDP_Growth   Government_Debt_lag1 8.005001e-07         2
+ France           GDP_Growth Capital_Formation_lag1 3.108512e-06         1
+ France           GDP_Growth     Trade_Balance_lag1 1.797493e-03         1
+ France           GDP_Growth         Inflation_lag1 6.220057e-03         1
+ France Government_Debt_lag1     Exchange_Rate_lag1 9.837929e-03         3
+ France   Trade_Balance_lag1     Exchange_Rate_lag1 1.533824e-02         3
+ France        Reserves_lag1 Capital_Formation_lag1 2.311726e-02         2
+ France       Inflation_lag1          Reserves_lag1 2.502443e-02         1
+ France Government_Debt_lag1     Trade_Balance_lag1 3.703338e-02         1
+ France   Exchange_Rate_lag1     Trade_Balance_lag1 3.959761e-02         1

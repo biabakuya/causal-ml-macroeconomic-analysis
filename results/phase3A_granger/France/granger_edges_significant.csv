@@ -1,0 +1,11 @@
+Country,Cause,Effect,p_value_min,best_lag
+France,GDP_Growth,Government_Debt_lag1,8.005000600497991e-07,2
+France,GDP_Growth,Capital_Formation_lag1,3.1085122348496533e-06,1
+France,GDP_Growth,Trade_Balance_lag1,0.001797492537882218,1
+France,GDP_Growth,Inflation_lag1,0.00622005700071811,1
+France,Government_Debt_lag1,Exchange_Rate_lag1,0.009837929324152892,3
+France,Trade_Balance_lag1,Exchange_Rate_lag1,0.015338240003881561,3
+France,Reserves_lag1,Capital_Formation_lag1,0.02311725798803538,2
+France,Inflation_lag1,Reserves_lag1,0.025024434262818408,1
+France,Government_Debt_lag1,Trade_Balance_lag1,0.03703337563674343,1
+France,Exchange_Rate_lag1,Trade_Balance_lag1,0.0395976115427694,1

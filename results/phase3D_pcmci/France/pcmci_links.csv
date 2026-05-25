@@ -1,0 +1,4 @@
+source,target,lag,p_value,val,sign
+Government_Debt,Exchange_Rate,1,0.04890219560878244,0.5042540491843899,positive
+Exchange_Rate,Government_Debt,1,0.04890219560878244,0.5621487860264952,positive
+Exchange_Rate,Government_Debt,2,0.04890219560878244,0.5868791725989869,positive

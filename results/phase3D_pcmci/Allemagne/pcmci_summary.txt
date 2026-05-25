@@ -1,0 +1,14 @@
+PHASE 3D — PCMCI SUMMARY
+Country: Allemagne
+Input: ..\data\processed\pcmci_Allemagne.csv
+Observations: 25
+Variables: ['GDP_Growth', 'Capital_Formation', 'Inflation', 'Government_Debt', 'Trade_Balance', 'Exchange_Rate', 'Reserves']
+tau_min: 1
+tau_max: 3
+pc_alpha: 0.05
+alpha (links): 0.05
+independence_test: CMIknn (shuffle_test, knn=5)
+fdr_method: fdr_bh
+Significant links (lag>=1, without self-loops): 0
+
+No significant lagged links found at this alpha.

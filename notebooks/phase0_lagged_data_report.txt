@@ -1,0 +1,68 @@
+====================================================================================================
+PHASE 0 — CRÉATION DES DONNÉES LAGGÉES — RAPPORT
+====================================================================================================
+
+OBJECTIF
+-------
+Introduire une structure temporelle cohérente entre traitement, confounders et outcome.
+Le traitement et les confounders sont considérés en t-1, tandis que l’outcome reste en t.
+
+JUSTIFICATION
+-------------
+Cette transformation permet d’éviter la simultanéité contemporaine entre Capital_Formation et GDP_Growth,
+et rend l’interprétation causale plus cohérente avec la théorie macroéconomique.
+
+FICHIERS CRÉÉS
+--------------
+1. data_transformed_unscaled_lagged.csv
+   Usage : causal discovery (Granger / PCMCI / DAG)
+   Particularité : les noms laggés sont explicites (_lag1)
+   Observations : 167
+   Période      : 2001–2024
+   Perte        : 7 observations
+
+2. data_prepared_for_dml_lagged.csv
+   Usage : Double Machine Learning (DML)
+   Particularité : les noms laggés sont renommés avec les noms usuels
+   (mais correspondent bien à des valeurs en t-1)
+   Observations : 167
+   Période      : 2001–2024
+   Perte        : 7 observations
+
+STRUCTURE TEMPORELLE RETENUE
+----------------------------
+Treatment / confounders en t-1 :
+  - Capital_Formation(t-1)
+  - Inflation(t-1)
+  - Exchange_Rate(t-1)
+  - Government_Debt(t-1)
+  - Trade_Balance(t-1)
+  - Reserves(t-1)
+
+Outcome en t :
+  - GDP_Growth(t)
+
+MODIFICATIONS À FAIRE ENSUITE
+-----------------------------
+Phase 3 (causal discovery)
+  - phase3A_01_granger.py : utiliser data_transformed_unscaled_lagged.csv
+  - phase3D_00_prepare_pcmci_data.py : utiliser data_transformed_unscaled_lagged.csv
+  - revoir ensuite les DAGs à la lumière de la théorie économique
+
+Phase 4 (DML)
+  - utiliser data_prepared_for_dml_lagged.csv
+  - interprétation : effet de Capital_Formation(t-1) sur GDP_Growth(t)
+
+REMARQUE MÉTHODOLOGIQUE
+-----------------------
+Cette structure réduit fortement le risque de causalité inverse contemporaine,
+mais les DAGs obtenus devront toujours être validés par la théorie économique.
+
+RÉSUMÉ OBSERVATIONS
+-------------------
+Base initiale unscaled : 174 observations
+Base finale unscaled   : 167 observations
+Base initiale scaled   : 174 observations
+Base finale scaled     : 167 observations
+
+====================================================================================================

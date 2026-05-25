@@ -1,0 +1,11 @@
+ARÊTES SUPPRIMÉES POUR RÉSOLUTION DES CYCLES
+================================================================================
+
+Total supprimé : 2
+
+Government_Debt__t-1 → Capital_Formation__t-1 (support=2, weight=0.71)
+  Cycle: Capital_Formation__t-1 → Government_Debt__t-1 → Capital_Formation__t-1
+
+Exchange_Rate__t-1 → Capital_Formation__t-1 (support=2, weight=16.73)
+  Cycle: Capital_Formation__t-1 → Exchange_Rate__t-1 → Capital_Formation__t-1
+

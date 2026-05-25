@@ -1,0 +1,12 @@
+Country,Cause,Effect,p_value_min,best_lag
+Nigeria,Trade_Balance_lag1,Government_Debt_lag1,8.877482448944501e-06,1
+Nigeria,Reserves_lag1,Government_Debt_lag1,0.000372539333661697,3
+Nigeria,Government_Debt_lag1,Inflation_lag1,0.000462922850245335,3
+Nigeria,Reserves_lag1,Trade_Balance_lag1,0.001659057032252111,3
+Nigeria,Inflation_lag1,Capital_Formation_lag1,0.006338824072653503,1
+Nigeria,GDP_Growth,Reserves_lag1,0.007417984441823497,3
+Nigeria,Trade_Balance_lag1,Inflation_lag1,0.029491743772602108,2
+Nigeria,Exchange_Rate_lag1,Government_Debt_lag1,0.02990837593697838,1
+Nigeria,Government_Debt_lag1,Capital_Formation_lag1,0.041235507370774166,2
+Nigeria,Capital_Formation_lag1,Government_Debt_lag1,0.04143039017394625,1
+Nigeria,Reserves_lag1,Capital_Formation_lag1,0.04298188689986031,3
