@@ -1,0 +1,4 @@
+source,target,lag,p_value,val,sign
+Trade_Balance,Exchange_Rate,3,0.04890219560878244,0.45322095297585485,positive
+Exchange_Rate,Reserves,2,0.04890219560878244,0.4926830341046027,positive
+Exchange_Rate,Reserves,3,0.04890219560878244,0.44916451558608417,positive

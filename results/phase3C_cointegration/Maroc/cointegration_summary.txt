@@ -1,2 +1,0 @@
-Country: Maroc
-Cointegration Rank (95%): 6

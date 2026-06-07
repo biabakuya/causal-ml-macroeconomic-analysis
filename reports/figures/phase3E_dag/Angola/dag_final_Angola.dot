@@ -1,5 +1,5 @@
 digraph DAG {
-	bgcolor=white fontsize=22 label="DAG Final — Angola (support ≥ 1, acyclic)" labelloc=t pad=0.25 rankdir=LR
+	bgcolor=white fontsize=22 label="Final DAG — Angola (support ≥ 1, acyclic)" labelloc=t pad=0.25 rankdir=LR
 	graph [concentrate=false nodesep=0.7 overlap=false ranksep=1.0 splines=polyline]
 	node [color="#1f2937" fontname=Helvetica fontsize=12 shape=ellipse style=filled]
 	edge [arrowsize=0.8 fontname=Helvetica fontsize=9]
@@ -25,11 +25,11 @@ digraph DAG {
 	"Exchange_Rate__t-1" -> GDP_Growth__t [label="s=1" color="#9ca3af" minlen=2 penwidth=1.4]
 	"Trade_Balance__t-1" -> GDP_Growth__t [label="s=1" color="#9ca3af" minlen=2 penwidth=1.4]
 	subgraph cluster_legend {
-		color="#d1d5db" fontsize=11 label="Légende"
-		Lpos [label="Lien positif" color="#16a34a" fillcolor=white shape=box style=filled]
-		Lneg [label="Lien négatif" color="#dc2626" fillcolor=white shape=box style=filled]
-		Lmix [label="Lien mixte" color="#d97706" fillcolor=white shape=box style=filled]
-		Lunk [label="Signe inconnu" color="#9ca3af" fillcolor=white shape=box style=filled]
+		color="#d1d5db" fontsize=11 label=Legend
+		Lpos [label="Positive Link" color="#16a34a" fillcolor=white shape=box style=filled]
+		Lneg [label="Negative Link" color="#dc2626" fillcolor=white shape=box style=filled]
+		Lmix [label="Mixed Link" color="#d97706" fillcolor=white shape=box style=filled]
+		Lunk [label="Unknown Sign" color="#9ca3af" fillcolor=white shape=box style=filled]
 		Lpos -> Lneg [style=invis]
 		Lneg -> Lmix [style=invis]
 		Lmix -> Lunk [style=invis]

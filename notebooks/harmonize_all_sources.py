@@ -58,13 +58,13 @@ WEO_CODE_MAPPING = {
 # Mapping des noms de pays (harmonisation)
 COUNTRY_MAPPING = {
     'France': 'France',
-    'Germany': 'Allemagne',
+    'Germany': 'Germany',
     'Angola': 'Angola',
-    'Democratic Republic of the Congo': 'Congo, Dem. Rep.',
-    'Congo, Democratic Republic of the': 'Congo, Dem. Rep.',
+    'Democratic Republic of the Congo': 'DRC',
+    'Congo, Democratic Republic of the': 'DRC',
     'Ghana': 'Ghana',
     'Nigeria': 'Nigeria',
-    'Morocco': 'Maroc',
+    'Morocco': 'Morocco',
     'Euro Area (EA)': 'Euro Area'  # Temporaire, on séparera après
 }
 
@@ -196,9 +196,9 @@ ifs_er_france = ifs_er_euro_clean.copy()
 ifs_er_france['Country'] = 'France'
 
 ifs_er_allemagne = ifs_er_euro_clean.copy()
-ifs_er_allemagne['Country'] = 'Allemagne'
+ifs_er_allemagne['Country'] = 'Germany'
 
-print(f" Exchange Rate dupliqué pour France et Allemagne")
+print(f" Exchange Rate dupliqué pour France et Germany")
 print()
 
 

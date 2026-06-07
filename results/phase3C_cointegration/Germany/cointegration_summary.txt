@@ -1,0 +1,2 @@
+Country: Germany
+Cointegration Rank (95%): 7

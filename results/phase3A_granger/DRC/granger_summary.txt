@@ -1,0 +1,23 @@
+PHASE 3A — GRANGER (par pays)
+============================================================
+Country   : DRC
+Input     : ..\data\processed\data_transformed_unscaled_lagged.csv
+Obs (T)   : 23
+Vars (N)  : 7
+Alpha     : 0.05
+Max lag   : 3
+
+Edges significatives (p < alpha) : 10
+
+Top 20 edges (p croissant):
+Country                  Cause               Effect  p_value_min  best_lag
+    DRC             GDP_Growth   Exchange_Rate_lag1     0.000807         1
+    DRC   Government_Debt_lag1   Exchange_Rate_lag1     0.004028         1
+    DRC             GDP_Growth Government_Debt_lag1     0.010112         3
+    DRC          Reserves_lag1 Government_Debt_lag1     0.010620         1
+    DRC     Trade_Balance_lag1 Government_Debt_lag1     0.012091         2
+    DRC     Exchange_Rate_lag1 Government_Debt_lag1     0.024222         1
+    DRC     Exchange_Rate_lag1        Reserves_lag1     0.024951         2
+    DRC     Trade_Balance_lag1       Inflation_lag1     0.029166         2
+    DRC Capital_Formation_lag1       Inflation_lag1     0.037894         1
+    DRC   Government_Debt_lag1       Inflation_lag1     0.039868         3

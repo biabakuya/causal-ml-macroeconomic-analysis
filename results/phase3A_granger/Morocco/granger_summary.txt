@@ -1,0 +1,25 @@
+PHASE 3A — GRANGER (par pays)
+============================================================
+Country   : Morocco
+Input     : ..\data\processed\data_transformed_unscaled_lagged.csv
+Obs (T)   : 24
+Vars (N)  : 7
+Alpha     : 0.05
+Max lag   : 3
+
+Edges significatives (p < alpha) : 12
+
+Top 20 edges (p croissant):
+Country                  Cause                 Effect  p_value_min  best_lag
+Morocco             GDP_Growth   Government_Debt_lag1     0.000009         2
+Morocco Capital_Formation_lag1     Trade_Balance_lag1     0.000109         1
+Morocco   Government_Debt_lag1          Reserves_lag1     0.002995         3
+Morocco     Trade_Balance_lag1   Government_Debt_lag1     0.004927         1
+Morocco     Exchange_Rate_lag1     Trade_Balance_lag1     0.006958         1
+Morocco          Reserves_lag1     Trade_Balance_lag1     0.007529         1
+Morocco     Trade_Balance_lag1     Exchange_Rate_lag1     0.014186         3
+Morocco   Government_Debt_lag1     Exchange_Rate_lag1     0.014767         3
+Morocco   Government_Debt_lag1     Trade_Balance_lag1     0.027570         1
+Morocco     Exchange_Rate_lag1          Reserves_lag1     0.036205         1
+Morocco         Inflation_lag1   Government_Debt_lag1     0.037874         1
+Morocco     Trade_Balance_lag1 Capital_Formation_lag1     0.042906         1

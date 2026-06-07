@@ -3,35 +3,6 @@
 
 """
 PHASE 3E — DAG Synthesis (PCMCI + Granger + VAR-IRF + VAR-FEVD)
-
-RÈGLES :
-- garder seulement les liens temporellement valides :
-    X(t-1) -> Y(t)
-    X(t-2) -> Y(t)
-    X(t-3) -> Y(t)
-- supprimer les auto-boucles
-- supprimer les cycles pour garantir un vrai DAG
-- garder les arêtes selon un support minimal
-
-Inputs (per country slug):
-  ../results/phase3D_pcmci/<CountrySlug>/pcmci_links.csv
-  ../results/phase3A_granger/<CountrySlug>/granger_edges_significant.csv
-  ../results/phase3B_var/<CountrySlug>/var_irf_long.csv
-  ../results/phase3B_var/<CountrySlug>/var_fevd_long.csv
-
-Outputs:
-  ../results/phase3E_dag/<CountrySlug>/
-      - dag_edges_support.csv
-      - dag_edges_final.csv
-      - dag_nodes_metrics.csv
-      - dag_summary.txt
-      - dag_edges_filtered.txt
-      - dag_edges_cycles_removed.txt
-
-  ../reports/figures/phase3E_dag/<CountrySlug>/
-      - dag_final_<CountrySlug>.dot
-      - dag_final_<CountrySlug>.png
-      - dag_final_<CountrySlug>.pdf
 """
 
 import argparse
@@ -47,9 +18,6 @@ from graphviz import Digraph, Source
 os.environ["PATH"] += os.pathsep + r"C:\Program Files\Graphviz\bin"
 
 
-# =========================================================
-# UTILS
-# =========================================================
 def slugify(s: str) -> str:
     s = s.strip()
     s = re.sub(r"[^\w\s\-]", "", s, flags=re.UNICODE)
@@ -83,16 +51,7 @@ def sign_of(x):
     return "neutral"
 
 
-# =========================================================
-# TEMPORAL HELPERS
-# =========================================================
 def split_var_time(name: str):
-    """
-    Convertit :
-      GDP_Growth             -> ("GDP_Growth", "t")
-      Exchange_Rate_lag1     -> ("Exchange_Rate", "t-1")
-      Reserves_lag3          -> ("Reserves", "t-3")
-    """
     name = str(name).strip()
     m = re.match(r"^(.*)_lag([0-9]+)$", name)
     if m:
@@ -123,18 +82,6 @@ def node_time(node_name: str) -> str:
 
 
 def is_strict_temporal_edge(source: str, target: str) -> bool:
-    """
-    Autorisé :
-      X(t-1) -> Y(t)
-      X(t-2) -> Y(t)
-      X(t-3) -> Y(t)
-
-    Interdit :
-      X(t-1) -> Y(t-1)
-      X(t)   -> Y(t)
-      X(t)   -> Y(t-1)
-      X(t-2) -> Y(t-1)
-    """
     if "__" not in source or "__" not in target:
         return False
 
@@ -144,9 +91,6 @@ def is_strict_temporal_edge(source: str, target: str) -> bool:
     return (s_time in {"t-1", "t-2", "t-3"}) and (t_time == "t")
 
 
-# =========================================================
-# STYLING
-# =========================================================
 def edge_color(sign: str) -> str:
     if sign == "positive":
         return "#16a34a"
@@ -178,9 +122,6 @@ def node_style(node_name: str, degree: int, central_node: str = None):
     return fill, font, width, height
 
 
-# =========================================================
-# CYCLE RESOLUTION
-# =========================================================
 def break_cycles(edges_df: pd.DataFrame):
     if edges_df.empty:
         return edges_df, []
@@ -244,9 +185,6 @@ def break_cycles(edges_df: pd.DataFrame):
     return edges_remaining.reset_index(drop=True), removed_edges
 
 
-# =========================================================
-# LOADERS
-# =========================================================
 def load_pcmci_edges(pcmci_path: Path, alpha=None):
     df = pd.read_csv(pcmci_path)
     cols = [c.lower() for c in df.columns]
@@ -428,9 +366,6 @@ def load_var_fevd_edges(fevd_path: Path, fevd_min_share=0.10, use_max_horizon=Tr
     return pd.DataFrame(out_rows)
 
 
-# =========================================================
-# SYNTHESIS
-# =========================================================
 def synthesize_edges(method_dfs):
     edges = pd.concat(method_dfs, ignore_index=True) if len(method_dfs) else pd.DataFrame()
 
@@ -550,9 +485,6 @@ def compute_node_metrics(edges_df: pd.DataFrame):
     return df
 
 
-# =========================================================
-# GRAPHVIZ DAG
-# =========================================================
 def graphviz_dag(
     edges_final: pd.DataFrame,
     country: str,
@@ -561,7 +493,7 @@ def graphviz_dag(
     rankdir: str = "LR",
     engine: str = "dot",
 ):
-    title = f"DAG Final — {country} (support ≥ {min_support}, acyclic)"
+    title = f"Final DAG — {country} (support ≥ {min_support}, acyclic)"
     dot = Digraph(name="DAG", format="png", engine=engine)
 
     dot.attr(
@@ -573,7 +505,6 @@ def graphviz_dag(
         bgcolor="white"
     )
 
-    # réglages graphe plus stables
     dot.attr(
         "graph",
         splines="polyline",
@@ -598,7 +529,7 @@ def graphviz_dag(
     )
 
     if edges_final.empty:
-        dot.node("EMPTY", "Aucun lien retenu", fillcolor="#f3f4f6", color="#9ca3af")
+        dot.node("EMPTY", "No retained link", fillcolor="#f3f4f6", color="#9ca3af")
     else:
         G = nx.DiGraph()
         for _, r in edges_final.iterrows():
@@ -607,11 +538,10 @@ def graphviz_dag(
         degrees = dict(G.degree())
         central_node = max(degrees, key=lambda k: degrees[k]) if degrees else None
 
-        # Séparer par couches temporelles
         nodes_t3 = sorted([n for n in G.nodes if node_time(n) == "t-3"])
         nodes_t2 = sorted([n for n in G.nodes if node_time(n) == "t-2"])
         nodes_t1 = sorted([n for n in G.nodes if node_time(n) == "t-1"])
-        nodes_t  = sorted([n for n in G.nodes if node_time(n) == "t"])
+        nodes_t = sorted([n for n in G.nodes if node_time(n) == "t"])
 
         def add_nodes_to_subgraph(subg, nodes):
             for n in nodes:
@@ -627,35 +557,30 @@ def graphviz_dag(
                     fixedsize="true",
                 )
 
-        # Colonne t-3
         if nodes_t3:
             with dot.subgraph(name="cluster_t3") as c:
                 c.attr(label="Lag t-3", color="#d1d5db", fontsize="11")
                 c.attr(rank="same")
                 add_nodes_to_subgraph(c, nodes_t3)
 
-        # Colonne t-2
         if nodes_t2:
             with dot.subgraph(name="cluster_t2") as c:
                 c.attr(label="Lag t-2", color="#d1d5db", fontsize="11")
                 c.attr(rank="same")
                 add_nodes_to_subgraph(c, nodes_t2)
 
-        # Colonne t-1
         if nodes_t1:
             with dot.subgraph(name="cluster_t1") as c:
                 c.attr(label="Lag t-1", color="#d1d5db", fontsize="11")
                 c.attr(rank="same")
                 add_nodes_to_subgraph(c, nodes_t1)
 
-        # Colonne t
         if nodes_t:
             with dot.subgraph(name="cluster_t") as c:
                 c.attr(label="Current time t", color="#d1d5db", fontsize="11")
                 c.attr(rank="same")
                 add_nodes_to_subgraph(c, nodes_t)
 
-        # Arêtes
         for _, r in edges_final.iterrows():
             u = r["source"]
             v = r["target"]
@@ -675,13 +600,12 @@ def graphviz_dag(
                 minlen="2"
             )
 
-        # Légende compacte
         with dot.subgraph(name="cluster_legend") as c:
-            c.attr(label="Légende", color="#d1d5db", fontsize="11")
-            c.node("Lpos", "Lien positif", shape="box", style="filled", fillcolor="white", color="#16a34a")
-            c.node("Lneg", "Lien négatif", shape="box", style="filled", fillcolor="white", color="#dc2626")
-            c.node("Lmix", "Lien mixte", shape="box", style="filled", fillcolor="white", color="#d97706")
-            c.node("Lunk", "Signe inconnu", shape="box", style="filled", fillcolor="white", color="#9ca3af")
+            c.attr(label="Legend", color="#d1d5db", fontsize="11")
+            c.node("Lpos", "Positive Link", shape="box", style="filled", fillcolor="white", color="#16a34a")
+            c.node("Lneg", "Negative Link", shape="box", style="filled", fillcolor="white", color="#dc2626")
+            c.node("Lmix", "Mixed Link", shape="box", style="filled", fillcolor="white", color="#d97706")
+            c.node("Lunk", "Unknown Sign", shape="box", style="filled", fillcolor="white", color="#9ca3af")
             c.edge("Lpos", "Lneg", style="invis")
             c.edge("Lneg", "Lmix", style="invis")
             c.edge("Lmix", "Lunk", style="invis")
@@ -703,9 +627,6 @@ def graphviz_dag(
     return dot_path, png_path, pdf_path
 
 
-# =========================================================
-# MAIN
-# =========================================================
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--country", type=str, required=True, help='Ex: "France"')

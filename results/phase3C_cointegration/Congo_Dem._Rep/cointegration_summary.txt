@@ -1,2 +1,0 @@
-Country: Congo, Dem. Rep.
-Cointegration Rank (95%): 2

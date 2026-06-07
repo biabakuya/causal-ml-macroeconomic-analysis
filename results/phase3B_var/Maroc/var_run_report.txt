@@ -1,9 +1,0 @@
-PHASE 3B — VAR REPORT
-Country: Maroc
-Input: ..\data\processed\data_transformed_unscaled_lagged.csv
-N obs: 24
-Variables: ['GDP_Growth', 'Capital_Formation_lag1', 'Inflation_lag1', 'Government_Debt_lag1', 'Trade_Balance_lag1', 'Exchange_Rate_lag1', 'Reserves_lag1']
-Max lag used: 2
-Criterion: bic
-Chosen lag: 2
-Stable: False

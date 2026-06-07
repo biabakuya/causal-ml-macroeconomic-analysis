@@ -23,7 +23,6 @@ from pathlib import Path
 
 # CONFIGURATION
 
-
 DATA_PATH = Path("../data/processed/data_prepared_for_dml.csv")
 
 REPORTS_PATH = Path("../reports")
@@ -43,7 +42,6 @@ print("=" * 100)
 
 # LOAD DATA
 
-
 df = pd.read_csv(DATA_PATH)
 
 required_cols = {"Country", "Year"}
@@ -58,9 +56,6 @@ print(f" Variables numériques : {vars_numeric}")
 
 
 # METADATA UNITÉS / NOTES
-
-# Ici, les données sont standardisées (Z-score).
-# On met quand même des libellés utiles sur les figures.
 
 UNITS = {
     "GDP_Growth": "Z-score (GDP growth, %)",
@@ -86,10 +81,7 @@ def add_footnote(fig, note_lines, fontsize=9):
 
 # B1 — SUMMARY STATISTICS (GLOBAL)
 
-
-# Summary global (toutes observations confondues)
 summary_global = df[vars_numeric].describe().T
-# Ajouter skew/kurtosis pour lecture qualité
 summary_global["skew"] = df[vars_numeric].skew(numeric_only=True)
 summary_global["kurtosis"] = df[vars_numeric].kurtosis(numeric_only=True)
 
@@ -99,8 +91,6 @@ print(f" Summary statistics global sauvegardé : {OUT_SUMMARY_GLOBAL}")
 
 # B1bis — DESCRIPTIVE BY COUNTRY
 
-
-# Table descriptive par pays (mean/std/min/max)
 desc_by_country = (
     df.groupby("Country")[vars_numeric]
       .agg(["mean", "std", "min", "max"])
@@ -112,7 +102,6 @@ print(f" Descriptive by country sauvegardé : {OUT_DESC_BY_COUNTRY}")
 
 # B2 — CORRELATION MATRIX
 
-
 corr = df[vars_numeric].corr()
 
 fig = plt.figure(figsize=(10, 8))
@@ -120,7 +109,7 @@ ax = fig.add_subplot(111)
 sns.heatmap(corr, annot=True, fmt=".2f", cmap="coolwarm", center=0, ax=ax)
 ax.set_title("Correlation Matrix (standardised variables)")
 plt.tight_layout()
-add_footnote(fig, TRANSFORM_NOTES)
+# add_footnote(fig, TRANSFORM_NOTES)
 fig.savefig(FIG_PATH / "correlation_matrix.png", dpi=200)
 plt.close(fig)
 
@@ -128,7 +117,6 @@ print(" Heatmap corrélation sauvegardée : correlation_matrix.png")
 
 
 # B3 — SCATTER CAPITAL vs GROWTH
-
 
 fig = plt.figure(figsize=(9, 7))
 ax = fig.add_subplot(111)
@@ -142,7 +130,6 @@ sns.scatterplot(
     ax=ax
 )
 
-# Tendance globale (simple OLS sur données standardisées)
 sns.regplot(
     data=df,
     x="Capital_Formation",
@@ -156,7 +143,7 @@ ax.set_xlabel(UNITS.get("Capital_Formation", "Capital_Formation"))
 ax.set_ylabel(UNITS.get("GDP_Growth", "GDP_Growth"))
 
 plt.tight_layout()
-add_footnote(fig, TRANSFORM_NOTES)
+# add_footnote(fig, TRANSFORM_NOTES)
 fig.savefig(FIG_PATH / "scatter_capital_growth.png", dpi=200)
 plt.close(fig)
 
@@ -165,8 +152,6 @@ print(" Scatter plot sauvegardé : scatter_capital_growth.png")
 
 # B4 — EVOLUTION TEMPORELLE (2000–2024)
 
-
-# On inclut aussi Trade_Balance pour cohérence, si présent
 time_vars = [
     "GDP_Growth",
     "Capital_Formation",
@@ -196,7 +181,7 @@ for var in time_vars:
     ax.set_ylabel(UNITS.get(var, var))
 
     plt.tight_layout()
-    add_footnote(fig, TRANSFORM_NOTES)
+    # add_footnote(fig, TRANSFORM_NOTES)
     fig.savefig(FIG_PATH / f"time_{var}.png", dpi=200)
     plt.close(fig)
 

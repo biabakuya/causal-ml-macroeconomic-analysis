@@ -1,0 +1,4 @@
+source,target,support,methods,weight_sum,sign_majority
+Reserves__t-1,GDP_Growth__t,1,var_irf,38.36595894762914,positive
+Government_Debt__t-1,GDP_Growth__t,1,var_irf,26.90036990949481,positive
+Exchange_Rate__t-1,GDP_Growth__t,1,var_fevd,0.210276292438787,unknown

@@ -17,10 +17,6 @@ Entrée :
 
 Sortie :
   - ../results/phase4_dml/dml_hte_by_country.csv
-
-Remarque :
-  Ce script estime un ATE séparé par pays (et non un HTE au sens CATE individuel).
-  Il sert à comparer l’hétérogénéité de l’effet moyen entre pays.
 """
 
 import warnings
@@ -45,18 +41,8 @@ if not design_path.exists():
 
 df = pd.read_csv(design_path)
 
-# ======================================================================================
-# Helpers
-# ======================================================================================
 
 def safe_float(obj):
-    """
-    Convertit obj en float même si obj est :
-    - une méthode callable
-    - un array numpy
-    - un scalaire
-    - None
-    """
     if obj is None:
         return np.nan
 
@@ -73,22 +59,11 @@ def safe_float(obj):
         return np.nan
 
 
-# ======================================================================================
-# Vérifications de base
-# ======================================================================================
-
 if "Y" not in df.columns or "T" not in df.columns:
     raise ValueError("Le fichier dml_design_matrix.csv doit contenir les colonnes 'Y' et 'T'.")
 
-# Y = GDP_Growth(t)
 Y_all = df["Y"].astype(float).values.ravel()
-
-# T = Capital_Formation(t-1)  --> IMPORTANT: en 1D pour éviter les warnings sklearn
 T_all = df["T"].astype(float).values.ravel()
-
-# ======================================================================================
-# Reconstruction des pays à partir des dummies
-# ======================================================================================
 
 country_cols = [c for c in df.columns if c.startswith("C_")]
 if not country_cols:
@@ -96,8 +71,9 @@ if not country_cols:
 
 country_mat = df[country_cols].values
 
-# Ici, le pays de référence (aucune dummy active) correspond à l'Allemagne
-base_country = "Allemagne"
+# Avec pd.get_dummies(..., drop_first=True), le pays de référence est le premier pays
+# par ordre alphabétique. Ici : Angola.
+base_country = "Angola"
 
 countries = []
 for i in range(country_mat.shape[0]):
@@ -109,10 +85,6 @@ for i in range(country_mat.shape[0]):
 
 df["_Country"] = countries
 
-# ======================================================================================
-# X : pour l'estimation par pays, on enlève les dummies pays
-# ======================================================================================
-
 X_cols_all = [c for c in df.columns if c not in ["Y", "T", "_Country"]]
 X_macro_cols = [c for c in X_cols_all if not c.startswith("C_")]
 
@@ -123,27 +95,21 @@ print(f"✅ Colonnes X macro utilisées (t-1) : {X_macro_cols}")
 print(f"✅ Pays détectés : {sorted(df['_Country'].unique())}")
 print()
 
-# ======================================================================================
-# Boucle par pays
-# ======================================================================================
-
 rows = []
 
 for c in sorted(df["_Country"].unique()):
     idx = (df["_Country"] == c).values
     n = int(idx.sum())
 
-    # Seuil réaliste pour petit panel par pays
     min_n = 18
     if n < min_n:
         print(f"⚠️ {c}: n={n} trop petit (<{min_n}) -> skip")
         continue
 
     Y = Y_all[idx]
-    T = T_all[idx]  # 1D
+    T = T_all[idx]
     X = df.loc[idx, X_macro_cols].astype(float).values
 
-    # CV adapté à la taille du pays
     n_splits = min(N_SPLITS, max(2, n // 6))
     if n_splits < 2:
         print(f"⚠️ {c}: n={n} trop petit pour CV -> skip")
@@ -178,34 +144,24 @@ for c in sorted(df["_Country"].unique()):
             random_state=RANDOM_STATE,
         )
 
-        # Structure utilisée :
-        # Capital_Formation(t-1) -> GDP_Growth(t)
         dml.fit(Y, T, X=X, inference="auto")
 
-        # ------------------------------------------------------------------
-        # ATE + IC95%
-        # ------------------------------------------------------------------
         ate = safe_float(dml.ate(X=X))
 
         lb, ub = dml.ate_interval(X=X)
         lb = safe_float(lb)
         ub = safe_float(ub)
 
-        # ------------------------------------------------------------------
-        # Inference : p-value + stderr
-        # ------------------------------------------------------------------
         pval = np.nan
         stderr = np.nan
 
         try:
             inf = dml.ate_inference(X=X)
 
-            # p-value
             pval = safe_float(getattr(inf, "pvalue", None))
             if np.isnan(pval):
                 pval = safe_float(getattr(inf, "pvalue_", None))
 
-            # stderr
             stderr = safe_float(getattr(inf, "stderr", None))
             if np.isnan(stderr):
                 stderr = safe_float(getattr(inf, "stderr_mean", None))
@@ -239,9 +195,6 @@ for c in sorted(df["_Country"].unique()):
     except Exception as e:
         print(f"❌ {c}: erreur DML -> {e}")
 
-# ======================================================================================
-# Export
-# ======================================================================================
 
 out = pd.DataFrame(rows)
 out_path = RES_DIR / "dml_hte_by_country.csv"

@@ -1,0 +1,21 @@
+PHASE 3A — GRANGER (par pays)
+============================================================
+Country   : Germany
+Input     : ..\data\processed\data_transformed_unscaled_lagged.csv
+Obs (T)   : 24
+Vars (N)  : 7
+Alpha     : 0.05
+Max lag   : 3
+
+Edges significatives (p < alpha) : 8
+
+Top 20 edges (p croissant):
+Country                  Cause                 Effect  p_value_min  best_lag
+Germany             GDP_Growth Capital_Formation_lag1     0.000098         1
+Germany             GDP_Growth         Inflation_lag1     0.000600         1
+Germany             GDP_Growth   Government_Debt_lag1     0.001242         2
+Germany     Trade_Balance_lag1 Capital_Formation_lag1     0.001286         2
+Germany          Reserves_lag1 Capital_Formation_lag1     0.004857         2
+Germany     Trade_Balance_lag1          Reserves_lag1     0.022369         2
+Germany Capital_Formation_lag1     Trade_Balance_lag1     0.031514         2
+Germany     Exchange_Rate_lag1   Government_Debt_lag1     0.034982         1

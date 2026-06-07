@@ -12,12 +12,12 @@ Pays  : 7 | Période : 2000–2024
 - Doublons (Country, Year) : 0
 
 - Années manquantes par pays :
-  Allemagne          -> OK (aucune)
   Angola             -> OK (aucune)
-  Congo, Dem. Rep.   -> 1 manquantes : [2024]
+  DRC                -> 1 manquantes : [2024]
   France             -> OK (aucune)
+  Germany            -> OK (aucune)
   Ghana              -> OK (aucune)
-  Maroc              -> OK (aucune)
+  Morocco            -> OK (aucune)
   Nigeria            -> OK (aucune)
 
 - Types de colonnes :
@@ -51,153 +51,153 @@ Reserves             0
 3) VALEURS EXTREMES : max abs, outliers z-score
 ====================================================================================================
 - Max |x| par variable (top) :
-Inflation            3.222079
-Capital_Formation    3.039918
-Government_Debt      2.991457
-Trade_Balance        2.962743
-GDP_Growth           2.893389
-Reserves             2.812674
-Exchange_Rate        1.809857
+Inflation            3.550750
+Capital_Formation    3.546571
+Trade_Balance        3.542692
+Government_Debt      3.183191
+Reserves             2.917504
+GDP_Growth           2.828885
+Exchange_Rate        1.860559
 
 - Outliers forts (|z| > 3.5) :
+Capital_Formation    1
+Inflation            1
+Trade_Balance        1
 GDP_Growth           0
-Capital_Formation    0
-Inflation            0
 Government_Debt      0
-Trade_Balance        0
 Exchange_Rate        0
 Reserves             0
 
 - Top 5 valeurs extrêmes par variable (|z| max) :
 
   GDP_Growth:
-         Country  Year  GDP_Growth
-          France  2020   -2.893389
-Congo, Dem. Rep.  2000   -2.893389
-           Maroc  2020   -2.864221
-         Nigeria  2002    2.650500
-          Angola  2005    2.650500
+Country  Year  GDP_Growth
+    DRC  2000   -2.828885
+ France  2020   -2.743017
+ Angola  2005    2.724017
+Nigeria  2002    2.661855
+ Angola  2002    2.625729
 
   Capital_Formation:
-         Country  Year  Capital_Formation
-Congo, Dem. Rep.  2009          -3.039918
-Congo, Dem. Rep.  2008          -3.039918
-Congo, Dem. Rep.  2005          -3.001898
-Congo, Dem. Rep.  2006          -2.804701
-Congo, Dem. Rep.  2022          -2.760701
+Country  Year  Capital_Formation
+    DRC  2008          -3.546571
+    DRC  2009          -3.129787
+    DRC  2005          -2.989596
+    DRC  2006          -2.793273
+    DRC  2022          -2.749469
 
   Inflation:
-         Country  Year  Inflation
-Congo, Dem. Rep.  2000   3.222079
-Congo, Dem. Rep.  2001   3.222079
-          Angola  2000   3.200473
-          Angola  2001   2.561914
-          Angola  2002   2.277933
+Country  Year  Inflation
+    DRC  2000   3.550750
+    DRC  2001   3.270465
+ Angola  2000   3.037912
+ Angola  2001   2.554111
+ Angola  2002   2.271010
 
   Government_Debt:
 Country  Year  Government_Debt
-Nigeria  2007        -2.991457
-Nigeria  2008        -2.991457
-Nigeria  2009        -2.964299
-Nigeria  2010        -2.819503
-Nigeria  2006        -2.817537
+Nigeria  2008        -3.183191
+Nigeria  2007        -3.044772
+Nigeria  2009        -2.944920
+Nigeria  2010        -2.801179
+Nigeria  2006        -2.799228
 
   Trade_Balance:
 Country  Year  Trade_Balance
- Angola  2006       2.962743
-Nigeria  2005       2.962743
-Nigeria  2006       2.871790
- Angola  2007       2.522069
-Nigeria  2004       2.234248
+Nigeria  2005       3.542692
+ Angola  2006       3.003744
+Nigeria  2006       2.833793
+ Angola  2007       2.488406
+Nigeria  2004       2.204151
 
   Exchange_Rate:
-         Country  Year  Exchange_Rate
-Congo, Dem. Rep.  2022       1.809857
-Congo, Dem. Rep.  2023       1.809857
-Congo, Dem. Rep.  2021       1.808982
-Congo, Dem. Rep.  2020       1.782047
-Congo, Dem. Rep.  2019       1.738533
+Country  Year  Exchange_Rate
+    DRC  2023       1.860559
+    DRC  2022       1.816198
+    DRC  2021       1.812949
+    DRC  2020       1.785941
+    DRC  2019       1.742311
 
   Reserves:
-         Country  Year  Reserves
-Congo, Dem. Rep.  2008 -2.812674
-Congo, Dem. Rep.  2002 -2.812674
-Congo, Dem. Rep.  2000 -2.790629
-Congo, Dem. Rep.  2001 -2.790629
-Congo, Dem. Rep.  2003 -2.741025
+Country  Year  Reserves
+    DRC  2002 -2.917504
+    DRC  2008 -2.876660
+    DRC  2000 -2.794886
+    DRC  2001 -2.794886
+    DRC  2003 -2.745204
 
 ====================================================================================================
 4) STATIONNARITE (post-transform) : ADF & KPSS par pays
 ====================================================================================================
 Alpha = 0.05
 
------ Allemagne -----
-GDP_Growth                | ADF p= 0.0105 | KPSS p= 0.0417 | INCONCLUSIVE
-Capital_Formation         | ADF p= 0.0000 | KPSS p= 0.0242 | INCONCLUSIVE
-Inflation                 | ADF p= 0.1225 | KPSS p= 0.1000 | INCONCLUSIVE
-Government_Debt           | ADF p= 0.1297 | KPSS p= 0.1000 | INCONCLUSIVE
-Trade_Balance             | ADF p= 0.2107 | KPSS p= 0.0542 | INCONCLUSIVE
-Exchange_Rate             | ADF p= 0.2685 | KPSS p= 0.1000 | INCONCLUSIVE
-Reserves                  | ADF p= 0.6968 | KPSS p= 0.0188 | NON-STATIONARY
-
 ----- Angola -----
-GDP_Growth                | ADF p= 0.1469 | KPSS p= 0.0575 | INCONCLUSIVE
-Capital_Formation         | ADF p= 0.0614 | KPSS p= 0.1000 | INCONCLUSIVE
-Inflation                 | ADF p= 0.5864 | KPSS p= 0.1000 | INCONCLUSIVE
-Government_Debt           | ADF p= 0.3605 | KPSS p= 0.1000 | INCONCLUSIVE
-Trade_Balance             | ADF p= 0.0312 | KPSS p= 0.1000 | STATIONARY
-Exchange_Rate             | ADF p= 0.3548 | KPSS p= 0.0139 | NON-STATIONARY
-Reserves                  | ADF p= 0.0001 | KPSS p= 0.0607 | STATIONARY
+GDP_Growth                | ADF p= 0.1492 | KPSS p= 0.0579 | INCONCLUSIVE
+Capital_Formation         | ADF p= 0.0657 | KPSS p= 0.1000 | INCONCLUSIVE
+Inflation                 | ADF p= 0.4612 | KPSS p= 0.1000 | INCONCLUSIVE
+Government_Debt           | ADF p= 0.3613 | KPSS p= 0.1000 | INCONCLUSIVE
+Trade_Balance             | ADF p= 0.0285 | KPSS p= 0.1000 | STATIONARY
+Exchange_Rate             | ADF p= 0.4890 | KPSS p= 0.0141 | NON-STATIONARY
+Reserves                  | ADF p= 0.0007 | KPSS p= 0.0604 | STATIONARY
 
------ Congo, Dem. Rep. -----
-GDP_Growth                | ADF p= 0.0016 | KPSS p= 0.1000 | STATIONARY
-Capital_Formation         | ADF p= 0.5856 | KPSS p= 0.1000 | INCONCLUSIVE
-Inflation                 | ADF p= 0.0425 | KPSS p= 0.1000 | STATIONARY
-Government_Debt           | ADF p= 0.3230 | KPSS p= 0.0208 | NON-STATIONARY
-Trade_Balance             | ADF p= 0.0337 | KPSS p= 0.0671 | STATIONARY
-Exchange_Rate             | ADF p= 0.9895 | KPSS p= 0.0146 | NON-STATIONARY
-Reserves                  | ADF p= 0.8345 | KPSS p= 0.0180 | NON-STATIONARY
+----- DRC -----
+GDP_Growth                | ADF p= 0.0023 | KPSS p= 0.1000 | STATIONARY
+Capital_Formation         | ADF p= 0.0071 | KPSS p= 0.1000 | STATIONARY
+Inflation                 | ADF p= 0.0269 | KPSS p= 0.1000 | STATIONARY
+Government_Debt           | ADF p= 0.2496 | KPSS p= 0.0207 | NON-STATIONARY
+Trade_Balance             | ADF p= 0.0335 | KPSS p= 0.0677 | STATIONARY
+Exchange_Rate             | ADF p= 0.9980 | KPSS p= 0.0134 | NON-STATIONARY
+Reserves                  | ADF p= 0.8133 | KPSS p= 0.0182 | NON-STATIONARY
 
 ----- France -----
-GDP_Growth                | ADF p= 0.0595 | KPSS p= 0.1000 | INCONCLUSIVE
-Capital_Formation         | ADF p= 0.6332 | KPSS p= 0.1000 | INCONCLUSIVE
-Inflation                 | ADF p= 0.0439 | KPSS p= 0.1000 | STATIONARY
-Government_Debt           | ADF p= 0.7736 | KPSS p= 0.0133 | NON-STATIONARY
-Trade_Balance             | ADF p= 0.0145 | KPSS p= 0.0691 | STATIONARY
-Exchange_Rate             | ADF p= 0.2685 | KPSS p= 0.1000 | INCONCLUSIVE
-Reserves                  | ADF p= 0.5317 | KPSS p= 0.0766 | INCONCLUSIVE
+GDP_Growth                | ADF p= 0.0684 | KPSS p= 0.1000 | INCONCLUSIVE
+Capital_Formation         | ADF p= 0.0562 | KPSS p= 0.1000 | INCONCLUSIVE
+Inflation                 | ADF p= 0.0440 | KPSS p= 0.1000 | STATIONARY
+Government_Debt           | ADF p= 0.7741 | KPSS p= 0.0133 | NON-STATIONARY
+Trade_Balance             | ADF p= 0.0132 | KPSS p= 0.0692 | STATIONARY
+Exchange_Rate             | ADF p= 0.2632 | KPSS p= 0.1000 | INCONCLUSIVE
+Reserves                  | ADF p= 0.1176 | KPSS p= 0.0771 | INCONCLUSIVE
+
+----- Germany -----
+GDP_Growth                | ADF p= 0.0211 | KPSS p= 0.0493 | INCONCLUSIVE
+Capital_Formation         | ADF p= 0.0001 | KPSS p= 0.0240 | INCONCLUSIVE
+Inflation                 | ADF p= 0.1139 | KPSS p= 0.1000 | INCONCLUSIVE
+Government_Debt           | ADF p= 0.1318 | KPSS p= 0.1000 | INCONCLUSIVE
+Trade_Balance             | ADF p= 0.2560 | KPSS p= 0.0547 | INCONCLUSIVE
+Exchange_Rate             | ADF p= 0.2632 | KPSS p= 0.1000 | INCONCLUSIVE
+Reserves                  | ADF p= 0.6507 | KPSS p= 0.0185 | NON-STATIONARY
 
 ----- Ghana -----
-GDP_Growth                | ADF p= 0.0134 | KPSS p= 0.1000 | STATIONARY
-Capital_Formation         | ADF p= 0.9351 | KPSS p= 0.0180 | NON-STATIONARY
-Inflation                 | ADF p= 0.0787 | KPSS p= 0.1000 | INCONCLUSIVE
-Government_Debt           | ADF p= 0.7175 | KPSS p= 0.1000 | INCONCLUSIVE
-Trade_Balance             | ADF p= 0.6879 | KPSS p= 0.1000 | INCONCLUSIVE
-Exchange_Rate             | ADF p= 0.9987 | KPSS p= 0.0111 | NON-STATIONARY
-Reserves                  | ADF p= 0.0064 | KPSS p= 0.0232 | INCONCLUSIVE
+GDP_Growth                | ADF p= 0.0151 | KPSS p= 0.1000 | STATIONARY
+Capital_Formation         | ADF p= 0.9290 | KPSS p= 0.0178 | NON-STATIONARY
+Inflation                 | ADF p= 0.0765 | KPSS p= 0.1000 | INCONCLUSIVE
+Government_Debt           | ADF p= 0.7310 | KPSS p= 0.1000 | INCONCLUSIVE
+Trade_Balance             | ADF p= 0.6710 | KPSS p= 0.1000 | INCONCLUSIVE
+Exchange_Rate             | ADF p= 0.9968 | KPSS p= 0.0107 | NON-STATIONARY
+Reserves                  | ADF p= 0.0052 | KPSS p= 0.0233 | INCONCLUSIVE
 
------ Maroc -----
-GDP_Growth                | ADF p= 0.0000 | KPSS p= 0.0450 | INCONCLUSIVE
-Capital_Formation         | ADF p= 0.1033 | KPSS p= 0.1000 | INCONCLUSIVE
-Inflation                 | ADF p= 0.0007 | KPSS p= 0.1000 | STATIONARY
-Government_Debt           | ADF p= 0.8441 | KPSS p= 0.1000 | INCONCLUSIVE
-Trade_Balance             | ADF p= 0.4502 | KPSS p= 0.1000 | INCONCLUSIVE
-Exchange_Rate             | ADF p= 0.3838 | KPSS p= 0.1000 | INCONCLUSIVE
-Reserves                  | ADF p= 0.0001 | KPSS p= 0.0226 | INCONCLUSIVE
+----- Morocco -----
+GDP_Growth                | ADF p= 0.0000 | KPSS p= 0.0502 | STATIONARY
+Capital_Formation         | ADF p= 0.1441 | KPSS p= 0.1000 | INCONCLUSIVE
+Inflation                 | ADF p= 0.0004 | KPSS p= 0.1000 | STATIONARY
+Government_Debt           | ADF p= 0.8471 | KPSS p= 0.1000 | INCONCLUSIVE
+Trade_Balance             | ADF p= 0.4503 | KPSS p= 0.1000 | INCONCLUSIVE
+Exchange_Rate             | ADF p= 0.3825 | KPSS p= 0.1000 | INCONCLUSIVE
+Reserves                  | ADF p= 0.0016 | KPSS p= 0.0224 | INCONCLUSIVE
 
 ----- Nigeria -----
-GDP_Growth                | ADF p= 0.2634 | KPSS p= 0.0294 | NON-STATIONARY
-Capital_Formation         | ADF p= 0.0003 | KPSS p= 0.1000 | STATIONARY
-Inflation                 | ADF p= 0.9976 | KPSS p= 0.0930 | INCONCLUSIVE
-Government_Debt           | ADF p= 0.7169 | KPSS p= 0.1000 | INCONCLUSIVE
-Trade_Balance             | ADF p= 0.1280 | KPSS p= 0.0832 | INCONCLUSIVE
-Exchange_Rate             | ADF p= 0.9987 | KPSS p= 0.0146 | NON-STATIONARY
-Reserves                  | ADF p= 0.0193 | KPSS p= 0.1000 | STATIONARY
+GDP_Growth                | ADF p= 0.2703 | KPSS p= 0.0295 | NON-STATIONARY
+Capital_Formation         | ADF p= 0.0001 | KPSS p= 0.1000 | STATIONARY
+Inflation                 | ADF p= 0.9931 | KPSS p= 0.0952 | INCONCLUSIVE
+Government_Debt           | ADF p= 0.9742 | KPSS p= 0.1000 | INCONCLUSIVE
+Trade_Balance             | ADF p= 0.0862 | KPSS p= 0.0861 | INCONCLUSIVE
+Exchange_Rate             | ADF p= 1.0000 | KPSS p= 0.0145 | NON-STATIONARY
+Reserves                  | ADF p= 0.0195 | KPSS p= 0.1000 | STATIONARY
 
 ====================================================================================================
 5) CONCLUSION
 ====================================================================================================
 - Doublons (Country,Year) : 0
 - Lignes NaN/INF          : 0
-- Max |z| global          : 3.2221
+- Max |z| global          : 3.5508
 - Rapport enregistré      : phase1_data_quality_report.txt

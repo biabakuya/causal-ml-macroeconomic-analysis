@@ -1,0 +1,2 @@
+Country: DRC
+Cointegration Rank (95%): 2

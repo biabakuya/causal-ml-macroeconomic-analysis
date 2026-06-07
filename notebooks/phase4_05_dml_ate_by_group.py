@@ -200,10 +200,11 @@ countries = sorted(df[COUNTRY_COL].astype(str).unique().tolist())
 print("✅ Countries in dataset:", countries)
 
 # -----------------------------
+# -----------------------------
 # Define groups
 # -----------------------------
-developed = {"France", "Allemagne"}
-developing = {"Maroc", "Congo, Dem. Rep.", "Angola", "Ghana", "Nigeria"}
+developed = {"France", "Germany"}
+developing = {"Morocco", "DRC", "Angola", "Ghana", "Nigeria"}
 
 df["Category"] = df[COUNTRY_COL].astype(str).apply(
     lambda c: "Developed" if c in developed else ("Developing" if c in developing else "Other")
