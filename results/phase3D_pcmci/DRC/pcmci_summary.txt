@@ -9,9 +9,6 @@ pc_alpha: 0.05
 alpha (links): 0.05
 independence_test: CMIknn (shuffle_test, knn=5)
 fdr_method: fdr_bh
-Significant links (lag>=1, without self-loops): 3
+Significant links (lag>=1, without self-loops): 0
 
-       source        target  lag  p_value      val     sign
-Trade_Balance Exchange_Rate    3 0.048902 0.453221 positive
-Exchange_Rate      Reserves    2 0.048902 0.492683 positive
-Exchange_Rate      Reserves    3 0.048902 0.449165 positive
+No significant lagged links found at this alpha.

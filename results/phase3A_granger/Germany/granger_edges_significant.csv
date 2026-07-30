@@ -1,9 +1,10 @@
 Country,Cause,Effect,p_value_min,best_lag
-Germany,GDP_Growth,Capital_Formation_lag1,9.77033313165416e-05,1
 Germany,GDP_Growth,Inflation_lag1,0.0005998734399515381,1
 Germany,GDP_Growth,Government_Debt_lag1,0.0012419039726983903,2
-Germany,Trade_Balance_lag1,Capital_Formation_lag1,0.0012861097602518104,2
-Germany,Reserves_lag1,Capital_Formation_lag1,0.0048568021708005615,2
+Germany,GDP_Growth,Capital_Formation_lag1,0.0026916111800088997,1
+Germany,Reserves_lag1,Capital_Formation_lag1,0.0060213177449254095,3
+Germany,Capital_Formation_lag1,GDP_Growth,0.006170605408607702,1
 Germany,Trade_Balance_lag1,Reserves_lag1,0.02236915076385431,2
-Germany,Capital_Formation_lag1,Trade_Balance_lag1,0.031514420529998095,2
+Germany,Capital_Formation_lag1,Trade_Balance_lag1,0.027347274391648566,2
 Germany,Exchange_Rate_lag1,Government_Debt_lag1,0.034982292107124995,1
+Germany,Capital_Formation_lag1,Exchange_Rate_lag1,0.037111937476862825,1

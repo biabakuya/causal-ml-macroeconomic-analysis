@@ -1,8 +1,7 @@
 Country,Cause,Effect,p_value_min,best_lag
-Ghana,Capital_Formation_lag1,Government_Debt_lag1,0.0008143339698184729,1
-Ghana,Capital_Formation_lag1,Exchange_Rate_lag1,0.0029280941316934435,1
-Ghana,Exchange_Rate_lag1,Capital_Formation_lag1,0.0033714274528189453,1
+Ghana,Capital_Formation_lag1,Government_Debt_lag1,0.0023708524001338715,1
 Ghana,Exchange_Rate_lag1,Government_Debt_lag1,0.004409259351855634,1
+Ghana,Exchange_Rate_lag1,Capital_Formation_lag1,0.006421039800170485,1
 Ghana,Government_Debt_lag1,Trade_Balance_lag1,0.011607643153334736,1
 Ghana,Reserves_lag1,Government_Debt_lag1,0.012305700053250407,1
 Ghana,Government_Debt_lag1,GDP_Growth,0.01938161616843816,3

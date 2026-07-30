@@ -9,6 +9,11 @@ pc_alpha: 0.05
 alpha (links): 0.05
 independence_test: CMIknn (shuffle_test, knn=5)
 fdr_method: fdr_bh
-Significant links (lag>=1, without self-loops): 0
+Significant links (lag>=1, without self-loops): 5
 
-No significant lagged links found at this alpha.
+       source            target  lag  p_value      val     sign
+Trade_Balance Capital_Formation    1 0.048902 0.515680 positive
+     Reserves     Exchange_Rate    1 0.048902 0.514093 positive
+Exchange_Rate   Government_Debt    1 0.048902 0.452011 positive
+     Reserves   Government_Debt    1 0.048902 0.505119 positive
+     Reserves   Government_Debt    3 0.048902 0.482188 positive

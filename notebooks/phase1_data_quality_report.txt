@@ -51,8 +51,8 @@ Reserves             0
 3) VALEURS EXTREMES : max abs, outliers z-score
 ====================================================================================================
 - Max |x| par variable (top) :
+Capital_Formation    3.741800
 Inflation            3.550750
-Capital_Formation    3.546571
 Trade_Balance        3.542692
 Government_Debt      3.183191
 Reserves             2.917504
@@ -60,7 +60,7 @@ GDP_Growth           2.828885
 Exchange_Rate        1.860559
 
 - Outliers forts (|z| > 3.5) :
-Capital_Formation    1
+Capital_Formation    2
 Inflation            1
 Trade_Balance        1
 GDP_Growth           0
@@ -80,11 +80,11 @@ Nigeria  2002    2.661855
 
   Capital_Formation:
 Country  Year  Capital_Formation
-    DRC  2008          -3.546571
-    DRC  2009          -3.129787
-    DRC  2005          -2.989596
-    DRC  2006          -2.793273
-    DRC  2022          -2.749469
+    DRC  2008          -3.741800
+    DRC  2001          -3.544265
+    DRC  2002          -3.487383
+    DRC  2007          -3.214045
+    DRC  2000          -3.171647
 
   Inflation:
 Country  Year  Inflation
@@ -133,7 +133,7 @@ Alpha = 0.05
 
 ----- Angola -----
 GDP_Growth                | ADF p= 0.1492 | KPSS p= 0.0579 | INCONCLUSIVE
-Capital_Formation         | ADF p= 0.0657 | KPSS p= 0.1000 | INCONCLUSIVE
+Capital_Formation         | ADF p= 0.0320 | KPSS p= 0.1000 | STATIONARY
 Inflation                 | ADF p= 0.4612 | KPSS p= 0.1000 | INCONCLUSIVE
 Government_Debt           | ADF p= 0.3613 | KPSS p= 0.1000 | INCONCLUSIVE
 Trade_Balance             | ADF p= 0.0285 | KPSS p= 0.1000 | STATIONARY
@@ -142,7 +142,7 @@ Reserves                  | ADF p= 0.0007 | KPSS p= 0.0604 | STATIONARY
 
 ----- DRC -----
 GDP_Growth                | ADF p= 0.0023 | KPSS p= 0.1000 | STATIONARY
-Capital_Formation         | ADF p= 0.0071 | KPSS p= 0.1000 | STATIONARY
+Capital_Formation         | ADF p= 0.0000 | KPSS p= 0.0537 | STATIONARY
 Inflation                 | ADF p= 0.0269 | KPSS p= 0.1000 | STATIONARY
 Government_Debt           | ADF p= 0.2496 | KPSS p= 0.0207 | NON-STATIONARY
 Trade_Balance             | ADF p= 0.0335 | KPSS p= 0.0677 | STATIONARY
@@ -151,7 +151,7 @@ Reserves                  | ADF p= 0.8133 | KPSS p= 0.0182 | NON-STATIONARY
 
 ----- France -----
 GDP_Growth                | ADF p= 0.0684 | KPSS p= 0.1000 | INCONCLUSIVE
-Capital_Formation         | ADF p= 0.0562 | KPSS p= 0.1000 | INCONCLUSIVE
+Capital_Formation         | ADF p= 0.6922 | KPSS p= 0.0476 | NON-STATIONARY
 Inflation                 | ADF p= 0.0440 | KPSS p= 0.1000 | STATIONARY
 Government_Debt           | ADF p= 0.7741 | KPSS p= 0.0133 | NON-STATIONARY
 Trade_Balance             | ADF p= 0.0132 | KPSS p= 0.0692 | STATIONARY
@@ -160,7 +160,7 @@ Reserves                  | ADF p= 0.1176 | KPSS p= 0.0771 | INCONCLUSIVE
 
 ----- Germany -----
 GDP_Growth                | ADF p= 0.0211 | KPSS p= 0.0493 | INCONCLUSIVE
-Capital_Formation         | ADF p= 0.0001 | KPSS p= 0.0240 | INCONCLUSIVE
+Capital_Formation         | ADF p= 0.4586 | KPSS p= 0.1000 | INCONCLUSIVE
 Inflation                 | ADF p= 0.1139 | KPSS p= 0.1000 | INCONCLUSIVE
 Government_Debt           | ADF p= 0.1318 | KPSS p= 0.1000 | INCONCLUSIVE
 Trade_Balance             | ADF p= 0.2560 | KPSS p= 0.0547 | INCONCLUSIVE
@@ -169,7 +169,7 @@ Reserves                  | ADF p= 0.6507 | KPSS p= 0.0185 | NON-STATIONARY
 
 ----- Ghana -----
 GDP_Growth                | ADF p= 0.0151 | KPSS p= 0.1000 | STATIONARY
-Capital_Formation         | ADF p= 0.9290 | KPSS p= 0.0178 | NON-STATIONARY
+Capital_Formation         | ADF p= 0.9986 | KPSS p= 0.0205 | NON-STATIONARY
 Inflation                 | ADF p= 0.0765 | KPSS p= 0.1000 | INCONCLUSIVE
 Government_Debt           | ADF p= 0.7310 | KPSS p= 0.1000 | INCONCLUSIVE
 Trade_Balance             | ADF p= 0.6710 | KPSS p= 0.1000 | INCONCLUSIVE
@@ -178,7 +178,7 @@ Reserves                  | ADF p= 0.0052 | KPSS p= 0.0233 | INCONCLUSIVE
 
 ----- Morocco -----
 GDP_Growth                | ADF p= 0.0000 | KPSS p= 0.0502 | STATIONARY
-Capital_Formation         | ADF p= 0.1441 | KPSS p= 0.1000 | INCONCLUSIVE
+Capital_Formation         | ADF p= 0.0159 | KPSS p= 0.0989 | STATIONARY
 Inflation                 | ADF p= 0.0004 | KPSS p= 0.1000 | STATIONARY
 Government_Debt           | ADF p= 0.8471 | KPSS p= 0.1000 | INCONCLUSIVE
 Trade_Balance             | ADF p= 0.4503 | KPSS p= 0.1000 | INCONCLUSIVE
@@ -187,7 +187,7 @@ Reserves                  | ADF p= 0.0016 | KPSS p= 0.0224 | INCONCLUSIVE
 
 ----- Nigeria -----
 GDP_Growth                | ADF p= 0.2703 | KPSS p= 0.0295 | NON-STATIONARY
-Capital_Formation         | ADF p= 0.0001 | KPSS p= 0.1000 | STATIONARY
+Capital_Formation         | ADF p= 0.8514 | KPSS p= 0.0592 | INCONCLUSIVE
 Inflation                 | ADF p= 0.9931 | KPSS p= 0.0952 | INCONCLUSIVE
 Government_Debt           | ADF p= 0.9742 | KPSS p= 0.1000 | INCONCLUSIVE
 Trade_Balance             | ADF p= 0.0862 | KPSS p= 0.0861 | INCONCLUSIVE
@@ -199,5 +199,5 @@ Reserves                  | ADF p= 0.0195 | KPSS p= 0.1000 | STATIONARY
 ====================================================================================================
 - Doublons (Country,Year) : 0
 - Lignes NaN/INF          : 0
-- Max |z| global          : 3.5508
+- Max |z| global          : 3.7418
 - Rapport enregistré      : phase1_data_quality_report.txt

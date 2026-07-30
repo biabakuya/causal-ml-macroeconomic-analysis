@@ -9,14 +9,20 @@ pc_alpha: 0.05
 alpha (links): 0.05
 independence_test: CMIknn (shuffle_test, knn=5)
 fdr_method: fdr_bh
-Significant links (lag>=1, without self-loops): 8
+Significant links (lag>=1, without self-loops): 14
 
-         source        target  lag  p_value      val     sign
-Government_Debt Exchange_Rate    1 0.029341 1.371424 positive
-     GDP_Growth Exchange_Rate    2 0.029341 0.622197 positive
-     GDP_Growth Exchange_Rate    3 0.029341 0.684791 positive
-     GDP_Growth Exchange_Rate    1 0.045140 0.626102 positive
-  Exchange_Rate    GDP_Growth    2 0.029341 0.698157 positive
-  Trade_Balance    GDP_Growth    3 0.029341 0.412727 positive
-  Exchange_Rate    GDP_Growth    3 0.029341 0.723408 positive
-  Exchange_Rate    GDP_Growth    1 0.045140 0.660835 positive
+           source            target  lag  p_value      val     sign
+    Exchange_Rate Capital_Formation    1 0.019561 0.619314 positive
+       GDP_Growth Capital_Formation    3 0.046328 0.461084 positive
+Capital_Formation     Exchange_Rate    1 0.019561 0.647656 positive
+  Government_Debt     Exchange_Rate    1 0.019561 1.371424 positive
+       GDP_Growth     Exchange_Rate    2 0.019561 0.622197 positive
+Capital_Formation     Exchange_Rate    2 0.019561 0.621236 positive
+       GDP_Growth     Exchange_Rate    3 0.019561 0.684791 positive
+Capital_Formation     Exchange_Rate    3 0.019561 0.668730 positive
+       GDP_Growth     Exchange_Rate    1 0.034519 0.626102 positive
+    Exchange_Rate        GDP_Growth    1 0.019561 0.660835 positive
+    Exchange_Rate        GDP_Growth    2 0.019561 0.698157 positive
+Capital_Formation        GDP_Growth    3 0.019561 0.498366 positive
+    Exchange_Rate        GDP_Growth    3 0.019561 0.723408 positive
+Capital_Formation        GDP_Growth    1 0.046328 0.392513 positive

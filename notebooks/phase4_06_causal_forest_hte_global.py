@@ -36,8 +36,8 @@ if YEAR_COL in df.columns:
 # ------------------------------------------------
 # Define groups
 # ------------------------------------------------
-developed = {"France", "Allemagne"}
-developing = {"Maroc", "Congo, Dem. Rep.", "Angola", "Ghana", "Nigeria"}
+developed = {"France", "Germany"}
+developing = {"Morocco", "DRC", "Angola", "Ghana", "Nigeria"}
 
 df["Category"] = df[COUNTRY_COL].astype(str).apply(
     lambda c: "Developed" if c in developed else "Developing"
@@ -104,7 +104,7 @@ df["HTE"] = tau
 out_indiv = RES_DIR / "dml_hte_individual_effects.csv"
 df.to_csv(out_indiv, index=False)
 
-print("✅ Individual HTE saved:", out_indiv)
+print(" Individual HTE saved:", out_indiv)
 
 # ------------------------------------------------
 # HTE by group
@@ -127,8 +127,8 @@ group_results.to_csv(out_group, index=False)
 print("\nHTE by group:")
 print(group_results)
 
-print("\n✅ Group HTE saved:", out_group)
+print("\n Group HTE saved:", out_group)
 
 print("=" * 100)
-print("✅ PHASE 4 — CausalForestDML — DONE")
+print(" PHASE 4 — CausalForestDML — DONE")
 print("=" * 100)

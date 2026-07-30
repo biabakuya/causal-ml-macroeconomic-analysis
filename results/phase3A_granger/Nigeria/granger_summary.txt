@@ -15,10 +15,10 @@ Nigeria     Trade_Balance_lag1   Government_Debt_lag1     0.000009         1
 Nigeria          Reserves_lag1   Government_Debt_lag1     0.000373         3
 Nigeria   Government_Debt_lag1         Inflation_lag1     0.000463         3
 Nigeria          Reserves_lag1     Trade_Balance_lag1     0.001659         3
-Nigeria         Inflation_lag1 Capital_Formation_lag1     0.006339         1
+Nigeria Capital_Formation_lag1   Government_Debt_lag1     0.005858         3
 Nigeria             GDP_Growth          Reserves_lag1     0.007418         3
+Nigeria Capital_Formation_lag1         Inflation_lag1     0.008177         2
+Nigeria             GDP_Growth Capital_Formation_lag1     0.016369         3
+Nigeria     Exchange_Rate_lag1 Capital_Formation_lag1     0.026214         3
 Nigeria     Trade_Balance_lag1         Inflation_lag1     0.029492         2
 Nigeria     Exchange_Rate_lag1   Government_Debt_lag1     0.029908         1
-Nigeria   Government_Debt_lag1 Capital_Formation_lag1     0.041236         2
-Nigeria Capital_Formation_lag1   Government_Debt_lag1     0.041430         1
-Nigeria          Reserves_lag1 Capital_Formation_lag1     0.042982         3

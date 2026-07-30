@@ -169,11 +169,11 @@ def main():
     # Liste des pays (mets exactement les noms du dataset)
     countries = [
         "France",
-        "Allemagne",
-        "Congo, Dem. Rep.",
+        "Germany",
+        "DRC",
         "Nigeria",
         "Angola",
-        "Maroc",
+        "Morocco",
         "Ghana",
     ]
 
@@ -270,8 +270,8 @@ def main():
 
     print("=" * 95)
     print("PHASE 3F — TABLEAU COMPARATIF — OK")
-    print(f"✅ CSV : {csv_path}")
-    print(f"✅ MD  : {md_path}")
+    print(f" CSV : {csv_path}")
+    print(f" MD  : {md_path}")
     print("=" * 95)
 
 

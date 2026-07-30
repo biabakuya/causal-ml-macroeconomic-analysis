@@ -1,8 +1,8 @@
 Country,Capital_Centrality,Capital_in_degree,Capital_out_degree,Capital_degree,Direct_Capital_to_GDP,Support(Capital->GDP),Methods(Capital->GDP),Support_mean,Support_max,VAR_IRF_max_abs,VAR_IRF_sign,VAR_IRF_best_horizon,PCMCI_links_count,DAG_structure
-France,Faible,0,0,0,Non,,,1.1666666666666667,2.0,72.32968730606778,Positive,1.0,3,Intermédiaire
-Allemagne,Faible,0,0,0,Non,,,1.0,1.0,,NA,,0,Intégrée
-"Congo, Dem. Rep.",Faible,0,0,0,Non,,,1.0,1.0,,NA,,3,Fragmentée
-Nigeria,Faible,0,0,0,Non,,,1.2,2.0,28.438419762384548,Positive,2.0,8,Fragmentée
-Angola,Faible,0,0,0,Non,,,1.3333333333333333,2.0,14.106999823070732,Positive,1.0,0,Intermédiaire
-Maroc,Faible,0,0,0,Non,,,1.3333333333333333,2.0,,NA,,0,Intégrée
-Ghana,Faible,0,0,0,Non,,,1.0512820512820513,3.0,10.623560763618643,Positive,2.0,34,Fragmentée
+France,Faible,0.0,0.0,0.0,Non,,,1.1111111111111112,2.0,84.58446504720581,Positive,1.0,6,Intermédiaire
+Germany,Faible,0.0,0.0,0.0,Non,,,1.2,2.0,15.42720009784756,Négative,1.0,0,Intermédiaire
+DRC,NA,,,,Non,,,,,,NA,,0,Fragmentée
+Nigeria,Faible,0.0,0.0,0.0,Non,,,1.2,3.0,29.209278534082703,Positive,2.0,14,Fragmentée
+Angola,Faible,0.0,0.0,0.0,Non,,,1.1363636363636365,2.0,8.988203751998608,Positive,1.0,17,Fragmentée
+Morocco,Faible,0.0,0.0,0.0,Non,,,1.125,2.0,39.72662307654884,Négative,4.0,5,Fragmentée
+Ghana,Faible,0.0,0.0,0.0,Non,,,1.0256410256410255,2.0,12.005078827812849,Positive,2.0,34,Fragmentée

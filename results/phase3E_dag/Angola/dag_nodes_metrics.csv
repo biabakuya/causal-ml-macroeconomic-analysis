@@ -1,8 +1,20 @@
 node,label,in_degree,out_degree,degree
-GDP_Growth__t,GDP Growth (t),6,0,6
-Capital_Formation__t-1,Capital Formation (t-1),0,1,1
-Exchange_Rate__t-1,Exchange Rate (t-1),0,1,1
-Government_Debt__t-1,Government Debt (t-1),0,1,1
+Exchange_Rate__t,Exchange Rate (t),9,0,9
+GDP_Growth__t,GDP Growth (t),5,0,5
+Government_Debt__t,Government Debt (t),5,0,5
+Exchange_Rate__t-1,Exchange Rate (t-1),0,3,3
+Government_Debt__t-1,Government Debt (t-1),0,3,3
+Capital_Formation__t-1,Capital Formation (t-1),0,2,2
+Capital_Formation__t-2,Capital Formation (t-2),0,2,2
+Exchange_Rate__t-3,Exchange Rate (t-3),0,2,2
+Reserves__t-1,Reserves (t-1),0,2,2
+Capital_Formation__t,Capital Formation (t),2,0,2
+Exchange_Rate__t-2,Exchange Rate (t-2),0,1,1
+GDP_Growth__t-1,GDP Growth (t-1),0,1,1
+Government_Debt__t-2,Government Debt (t-2),0,1,1
+Government_Debt__t-3,Government Debt (t-3),0,1,1
 Inflation__t-1,Inflation (t-1),0,1,1
-Reserves__t-1,Reserves (t-1),0,1,1
-Trade_Balance__t-1,Trade Balance (t-1),0,1,1
+Inflation__t-2,Inflation (t-2),0,1,1
+Reserves__t-2,Reserves (t-2),0,1,1
+Reserves__t-3,Reserves (t-3),0,1,1
+Reserves__t,Reserves (t),1,0,1

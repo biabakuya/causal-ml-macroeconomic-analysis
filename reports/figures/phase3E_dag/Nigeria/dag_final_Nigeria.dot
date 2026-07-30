@@ -6,21 +6,22 @@ digraph DAG {
 	subgraph cluster_t3 {
 		color="#d1d5db" fontsize=11 label="Lag t-3"
 		rank=same
+		"Capital_Formation__t-3" [label="Capital Formation (t-3)" fillcolor="#bfdbfe" fixedsize=true fontcolor=black height=0.75 width=1.4200000000000002]
 		"Exchange_Rate__t-3" [label="Exchange Rate (t-3)" fillcolor="#bfdbfe" fixedsize=true fontcolor=black height=0.75 width=1.4]
-		"GDP_Growth__t-3" [label="GDP Growth (t-3)" fillcolor="#bfdbfe" fixedsize=true fontcolor=black height=0.75 width=1.4]
-		"Trade_Balance__t-3" [label="Trade Balance (t-3)" fillcolor="#bfdbfe" fixedsize=true fontcolor=black height=0.75 width=1.4]
+		"GDP_Growth__t-3" [label="GDP Growth (t-3)" fillcolor="#bfdbfe" fixedsize=true fontcolor=black height=0.75 width=1.4200000000000002]
 	}
 	subgraph cluster_t2 {
 		color="#d1d5db" fontsize=11 label="Lag t-2"
 		rank=same
+		"Capital_Formation__t-2" [label="Capital Formation (t-2)" fillcolor="#bfdbfe" fixedsize=true fontcolor=black height=0.75 width=1.4]
 		"Exchange_Rate__t-2" [label="Exchange Rate (t-2)" fillcolor="#bfdbfe" fixedsize=true fontcolor=black height=0.75 width=1.4]
 		"GDP_Growth__t-2" [label="GDP Growth (t-2)" fillcolor="#bfdbfe" fixedsize=true fontcolor=black height=0.75 width=1.4]
 	}
 	subgraph cluster_t1 {
 		color="#d1d5db" fontsize=11 label="Lag t-1"
 		rank=same
-		"Capital_Formation__t-1" [label="Capital Formation (t-1)" fillcolor="#bfdbfe" fixedsize=true fontcolor=black height=0.75 width=1.4]
-		"Exchange_Rate__t-1" [label="Exchange Rate (t-1)" fillcolor="#bfdbfe" fixedsize=true fontcolor=black height=0.75 width=1.4]
+		"Capital_Formation__t-1" [label="Capital Formation (t-1)" fillcolor="#bfdbfe" fixedsize=true fontcolor=black height=0.75 width=1.4200000000000002]
+		"Exchange_Rate__t-1" [label="Exchange Rate (t-1)" fillcolor="#bfdbfe" fixedsize=true fontcolor=black height=0.75 width=1.4200000000000002]
 		"GDP_Growth__t-1" [label="GDP Growth (t-1)" fillcolor="#bfdbfe" fixedsize=true fontcolor=black height=0.75 width=1.4]
 		"Government_Debt__t-1" [label="Government Debt (t-1)" fillcolor="#bfdbfe" fixedsize=true fontcolor=black height=0.75 width=1.4]
 		"Inflation__t-1" [label="Inflation (t-1)" fillcolor="#bfdbfe" fixedsize=true fontcolor=black height=0.75 width=1.4]
@@ -28,18 +29,24 @@ digraph DAG {
 	subgraph cluster_t {
 		color="#d1d5db" fontsize=11 label="Current time t"
 		rank=same
-		Exchange_Rate__t [label="Exchange Rate (t)" fillcolor="#93c5fd" fixedsize=true fontcolor=black height=0.86 width=1.7400000000000002]
+		Capital_Formation__t [label="Capital Formation (t)" fillcolor="#93c5fd" fixedsize=true fontcolor=black height=0.75 width=1.4200000000000002]
+		Exchange_Rate__t [label="Exchange Rate (t)" fillcolor="#1d4ed8" fixedsize=true fontcolor=white height=1.04 width=2.22]
 		GDP_Growth__t [label="GDP Growth (t)" fillcolor="#facc15" fixedsize=true fontcolor=black height=0.98 width=2.06]
 	}
+	"Capital_Formation__t-1" -> GDP_Growth__t [label="s=3" color="#16a34a" minlen=2 penwidth=2.8]
 	"Exchange_Rate__t-1" -> GDP_Growth__t [label="s=2" color="#d97706" minlen=2 penwidth=2.0999999999999996]
-	"Capital_Formation__t-1" -> GDP_Growth__t [label="s=2" color="#16a34a" minlen=2 penwidth=2.0999999999999996]
 	"Government_Debt__t-1" -> Exchange_Rate__t [label="s=1" color="#16a34a" minlen=2 penwidth=1.4]
 	"Exchange_Rate__t-3" -> GDP_Growth__t [label="s=1" color="#16a34a" minlen=2 penwidth=1.4]
 	"Exchange_Rate__t-2" -> GDP_Growth__t [label="s=1" color="#16a34a" minlen=2 penwidth=1.4]
 	"GDP_Growth__t-3" -> Exchange_Rate__t [label="s=1" color="#16a34a" minlen=2 penwidth=1.4]
+	"Capital_Formation__t-3" -> Exchange_Rate__t [label="s=1" color="#16a34a" minlen=2 penwidth=1.4]
+	"Capital_Formation__t-1" -> Exchange_Rate__t [label="s=1" color="#16a34a" minlen=2 penwidth=1.4]
 	"GDP_Growth__t-1" -> Exchange_Rate__t [label="s=1" color="#16a34a" minlen=2 penwidth=1.4]
 	"GDP_Growth__t-2" -> Exchange_Rate__t [label="s=1" color="#16a34a" minlen=2 penwidth=1.4]
-	"Trade_Balance__t-3" -> GDP_Growth__t [label="s=1" color="#16a34a" minlen=2 penwidth=1.4]
+	"Capital_Formation__t-2" -> Exchange_Rate__t [label="s=1" color="#16a34a" minlen=2 penwidth=1.4]
+	"Exchange_Rate__t-1" -> Capital_Formation__t [label="s=1" color="#16a34a" minlen=2 penwidth=1.4]
+	"Capital_Formation__t-3" -> GDP_Growth__t [label="s=1" color="#16a34a" minlen=2 penwidth=1.4]
+	"GDP_Growth__t-3" -> Capital_Formation__t [label="s=1" color="#16a34a" minlen=2 penwidth=1.4]
 	"Inflation__t-1" -> GDP_Growth__t [label="s=1" color="#9ca3af" minlen=2 penwidth=1.4]
 	subgraph cluster_legend {
 		color="#d1d5db" fontsize=11 label=Legend

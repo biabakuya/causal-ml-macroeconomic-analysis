@@ -9,7 +9,7 @@ print("=" * 80)
 # =========================================================
 # PATHS
 # =========================================================
-DATA_PATH = Path("C:/Users/ibrahim/Pictures/stage_abil_2025/data/processed/data_transformed_unscaled.csv")
+DATA_PATH = Path("../data/processed/data_transformed_unscaled.csv")
 RES_DIR = Path("../results/phase4_dml")
 FIG_DIR = Path("../reports/figures/phase4_dml")
 FIG_DIR.mkdir(parents=True, exist_ok=True)

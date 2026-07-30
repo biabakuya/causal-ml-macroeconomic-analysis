@@ -30,7 +30,7 @@ FILES_IFS = {
 
 EXPECTED_VARS_WEO = [
     'Gross domestic product, constant prices',
-    'Gross national savings',
+    'Total investment',
     'Inflation, average consumer prices',
     'General government gross debt',
     'Current account balance'
@@ -55,23 +55,23 @@ for name, filepath in FILES_WEO.items():
     try:
         df = pd.read_csv(filepath, sep='\t', encoding='latin1')
         
-        print(f"✅ Chargé : {df.shape[0]} lignes × {df.shape[1]} colonnes")
+        print(f" Chargé : {df.shape[0]} lignes × {df.shape[1]} colonnes")
         
         # Années
         year_cols = [col for col in df.columns if col.isdigit() and len(col) == 4]
         
         if year_cols:
-            print(f"📅 Période : {year_cols[0]} - {year_cols[-1]} ({len(year_cols)} années)")
+            print(f" Période : {year_cols[0]} - {year_cols[-1]} ({len(year_cols)} années)")
             
             if year_cols[0] == '2000' and year_cols[-1] == '2024' and len(year_cols) == 25:
-                print(f"   ✅ Période correcte (25 années)")
+                print(f"    Période correcte (25 années)")
             else:
-                print(f"   ⚠️  Attendu: 2000-2024 (25 années)")
+                print(f"     Attendu: 2000-2024 (25 années)")
         
         # Pays
         if 'Country' in df.columns:
             countries = df['Country'].dropna().unique()
-            print(f"\n🌍 Pays ({len(countries)}) :")
+            print(f"\n Pays ({len(countries)}) :")
             for c in countries:
                 print(f"   - {c}")
         
@@ -79,21 +79,21 @@ for name, filepath in FILES_WEO.items():
         found_count = 0
         if 'Subject Descriptor' in df.columns:
             vars_found = df['Subject Descriptor'].dropna().unique()
-            print(f"\n📈 Variables ({len(vars_found)}) :")
+            print(f"\n Variables ({len(vars_found)}) :")
             
             for v in EXPECTED_VARS_WEO:
                 if v in vars_found:
-                    print(f"   ✅ {v}")
+                    print(f"    {v}")
                     found_count += 1
                 else:
-                    print(f"   ❌ MANQUANT : {v}")
+                    print(f"    MANQUANT : {v}")
             
             print(f"\n   Total : {found_count}/5 variables trouvées")
         
         weo_results[name] = 'OK' if year_cols and len(year_cols) == 25 and found_count == 5 else 'WARNING'
         
     except Exception as e:
-        print(f"❌ ERREUR : {e}")
+        print(f" ERREUR : {e}")
         weo_results[name] = 'ERROR'
 
 # ===========================================================================
@@ -115,32 +115,32 @@ for name, filepath in FILES_IFS.items():
     try:
         df = pd.read_csv(filepath)
         
-        print(f"✅ Chargé : {df.shape[0]} lignes × {df.shape[1]} colonnes")
+        print(f" Chargé : {df.shape[0]} lignes × {df.shape[1]} colonnes")
         
         # Années
         year_cols = [col for col in df.columns if col.isdigit() and len(col) == 4]
         
         if year_cols:
-            print(f"📅 Période : {year_cols[0]} - {year_cols[-1]} ({len(year_cols)} années)")
+            print(f" Période : {year_cols[0]} - {year_cols[-1]} ({len(year_cols)} années)")
         
         # Pays
         if 'COUNTRY' in df.columns:
             countries = df['COUNTRY'].unique()
-            print(f"\n🌍 Pays/Zones ({len(countries)}) :")
+            print(f"\n Pays/Zones ({len(countries)}) :")
             for c in countries:
                 print(f"   - {c}")
         
         # Indicateur
         if 'INDICATOR' in df.columns:
             indicators = df['INDICATOR'].unique()
-            print(f"\n📊 Indicateurs ({len(indicators)}) :")
+            print(f"\n Indicateurs ({len(indicators)}) :")
             for ind in indicators:
                 print(f"   - {ind}")
         
         ifs_results[name] = 'OK'
         
     except Exception as e:
-        print(f"❌ ERREUR : {e}")
+        print(f" ERREUR : {e}")
         ifs_results[name] = 'ERROR'
 
 # ===========================================================================
@@ -152,7 +152,7 @@ print(" " * 35 + "RAPPORT FINAL")
 print("="*100)
 print()
 
-print("📊 STATUT DES FICHIERS :\n")
+print(" STATUT DES FICHIERS :\n")
 
 print("WEO :")
 for name, status in weo_results.items():
@@ -171,19 +171,19 @@ no_errors = all(s != 'ERROR' for s in list(weo_results.values()) + list(ifs_resu
 
 if all_ok and no_errors:
     print("="*100)
-    print("✅ TOUS LES FICHIERS SONT CHARGÉS")
-    print("🚀 Prêt pour HARMONISATION")
+    print(" TOUS LES FICHIERS SONT CHARGÉS")
+    print(" Prêt pour HARMONISATION")
     print("="*100)
     print()
-    print("📋 DATASET ATTENDU :")
-    print("   Pays        : 7 (France, Allemagne, Ghana, Maroc, RDC, Angola, Nigeria)")
+    print(" DATASET ATTENDU :")
+    print("   Pays        : 7 (France, Germany, Ghana, Morocco, DRC, Angola, Nigeria)")
     print("   Période     : 2000-2024 (25 ans)")
     print("   Observations: 7 × 25 = 175")
     print("   Variables   : 7 (GDP_Growth, Capital_Formation, Inflation, Government_Debt,")
     print("                    Trade_Balance, Exchange_Rate, Reserves)")
 else:
     print("="*100)
-    print("⚠️  CERTAINS FICHIERS ONT DES PROBLÈMES")
+    print("  CERTAINS FICHIERS ONT DES PROBLÈMES")
     print("Vérifie les détails ci-dessus")
     print("="*100)
 

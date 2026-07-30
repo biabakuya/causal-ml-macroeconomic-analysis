@@ -197,7 +197,7 @@ if missing:
     raise ValueError(f"Colonnes manquantes dans DATA_PATH: {missing}")
 
 countries = sorted(df[COUNTRY_COL].astype(str).unique().tolist())
-print("✅ Countries in dataset:", countries)
+print(" Countries in dataset:", countries)
 
 # -----------------------------
 # -----------------------------
@@ -210,7 +210,7 @@ df["Category"] = df[COUNTRY_COL].astype(str).apply(
     lambda c: "Developed" if c in developed else ("Developing" if c in developing else "Other")
 )
 
-print("✅ Category counts:\n", df["Category"].value_counts(dropna=False))
+print(" Category counts:\n", df["Category"].value_counts(dropna=False))
 
 df_dev = df[df["Category"] == "Developed"].copy()
 df_devg = df[df["Category"] == "Developing"].copy()
@@ -219,15 +219,15 @@ rows = []
 
 if len(df_dev) >= 20:
     rows.append(fit_dml_ate(df_dev, "Developed"))
-    print(f"✅ Developed ATE computed (n={len(df_dev)})")
+    print(f" Developed ATE computed (n={len(df_dev)})")
 else:
-    print(f"⚠️ Developed group too small (n={len(df_dev)}) -> skip")
+    print(f" Developed group too small (n={len(df_dev)}) -> skip")
 
 if len(df_devg) >= 20:
     rows.append(fit_dml_ate(df_devg, "Developing"))
-    print(f"✅ Developing ATE computed (n={len(df_devg)})")
+    print(f" Developing ATE computed (n={len(df_devg)})")
 else:
-    print(f"⚠️ Developing group too small (n={len(df_devg)}) -> skip")
+    print(f" Developing group too small (n={len(df_devg)}) -> skip")
 
 # -----------------------------
 # Export
@@ -238,11 +238,11 @@ if rows:
     if "p_value" in out.columns:
         out = out.sort_values(["p_value", "Group"], ascending=[True, True])
     out.to_csv(out_path, index=False)
-    print(f"\n✅ Saved: {out_path}")
+    print(f"\n Saved: {out_path}")
     print(out.to_string(index=False))
 else:
-    print("\n⚠️ Aucun résultat exporté.")
+    print("\n Aucun résultat exporté.")
 
 print("=" * 100)
-print("✅ PHASE 4 — DML — ATE PAR GROUPE — DONE")
+print(" PHASE 4 — DML — ATE PAR GROUPE — DONE")
 print("=" * 100)

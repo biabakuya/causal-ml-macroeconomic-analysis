@@ -49,7 +49,7 @@ print()
 # Mapping des codes WEO vers noms de variables
 WEO_CODE_MAPPING = {
     'NGDP_RPCH': 'GDP_Growth',
-    'NGSD_NGDP': 'Capital_Formation',
+    'NID_NGDP': 'Capital_Formation',
     'PCPIPCH': 'Inflation',
     'GGXWDG_NGDP': 'Government_Debt',
     'BCA_NGDPD': 'Trade_Balance'

@@ -12,37 +12,37 @@ fdr_method: fdr_bh
 Significant links (lag>=1, without self-loops): 34
 
            source            target  lag  p_value      val     sign
-  Government_Debt Capital_Formation    1 0.009169 0.644649 positive
-    Exchange_Rate Capital_Formation    1 0.009169 0.579569 positive
-    Exchange_Rate Capital_Formation    2 0.009169 0.610939 positive
-    Exchange_Rate Capital_Formation    3 0.009169 0.564323 positive
-  Government_Debt Capital_Formation    2 0.015860 0.515827 positive
-  Government_Debt Capital_Formation    3 0.015860 0.546445 positive
-Capital_Formation     Exchange_Rate    1 0.009169 0.553922 positive
-  Government_Debt     Exchange_Rate    1 0.009169 1.252063 positive
-         Reserves     Exchange_Rate    1 0.009169 0.614759 positive
-Capital_Formation     Exchange_Rate    2 0.009169 0.553922 positive
-  Government_Debt     Exchange_Rate    2 0.009169 1.252063 positive
-         Reserves     Exchange_Rate    2 0.009169 0.614759 positive
-  Government_Debt     Exchange_Rate    3 0.009169 1.252063 positive
-         Reserves     Exchange_Rate    3 0.009169 0.614759 positive
-Capital_Formation     Exchange_Rate    3 0.015860 0.553922 positive
-Capital_Formation   Government_Debt    1 0.009169 0.553149 positive
-    Exchange_Rate   Government_Debt    1 0.009169 1.201186 positive
-Capital_Formation   Government_Debt    2 0.009169 0.457571 positive
-    Exchange_Rate   Government_Debt    2 0.009169 1.101894 positive
-    Trade_Balance   Government_Debt    3 0.009169 0.399436 positive
-    Exchange_Rate   Government_Debt    3 0.009169 0.929278 positive
-         Reserves   Government_Debt    2 0.015860 0.500553 positive
-         Reserves   Government_Debt    1 0.022006 0.539324 positive
-Capital_Formation   Government_Debt    3 0.040941 0.374969 positive
-       GDP_Growth         Inflation    3 0.040941 0.281890 positive
-Capital_Formation         Inflation    1 0.046679 0.278582 positive
-  Government_Debt          Reserves    1 0.009169 0.616594 positive
-    Exchange_Rate          Reserves    1 0.009169 0.784208 positive
-Capital_Formation          Reserves    2 0.009169 0.530761 positive
-  Government_Debt          Reserves    2 0.009169 0.753650 positive
-    Exchange_Rate          Reserves    2 0.009169 0.944399 positive
-  Government_Debt          Reserves    3 0.009169 1.020484 positive
-    Exchange_Rate          Reserves    3 0.009169 1.103003 positive
-Capital_Formation          Reserves    1 0.028626 0.338717 positive
+  Government_Debt Capital_Formation    1 0.007523 0.876374 positive
+    Exchange_Rate Capital_Formation    1 0.007523 0.895735 positive
+  Government_Debt Capital_Formation    2 0.007523 0.762004 positive
+    Exchange_Rate Capital_Formation    2 0.007523 0.919210 positive
+  Government_Debt Capital_Formation    3 0.007523 0.649327 positive
+    Exchange_Rate Capital_Formation    3 0.007523 0.728483 positive
+Capital_Formation     Exchange_Rate    1 0.007523 0.967163 positive
+  Government_Debt     Exchange_Rate    1 0.007523 1.252063 positive
+         Reserves     Exchange_Rate    1 0.007523 0.614759 positive
+Capital_Formation     Exchange_Rate    2 0.007523 0.967163 positive
+  Government_Debt     Exchange_Rate    2 0.007523 1.252063 positive
+         Reserves     Exchange_Rate    2 0.007523 0.614759 positive
+Capital_Formation     Exchange_Rate    3 0.007523 0.967163 positive
+  Government_Debt     Exchange_Rate    3 0.007523 1.252063 positive
+         Reserves     Exchange_Rate    3 0.007523 0.614759 positive
+Capital_Formation   Government_Debt    1 0.007523 0.963717 positive
+    Exchange_Rate   Government_Debt    1 0.007523 1.201186 positive
+Capital_Formation   Government_Debt    2 0.007523 0.806971 positive
+    Exchange_Rate   Government_Debt    2 0.007523 1.101894 positive
+Capital_Formation   Government_Debt    3 0.007523 0.805342 positive
+    Trade_Balance   Government_Debt    3 0.007523 0.399436 positive
+    Exchange_Rate   Government_Debt    3 0.007523 0.929278 positive
+         Reserves   Government_Debt    2 0.013972 0.500553 positive
+         Reserves   Government_Debt    1 0.020005 0.539324 positive
+       GDP_Growth         Inflation    3 0.038271 0.281890 positive
+  Government_Debt          Reserves    1 0.007523 0.616594 positive
+    Exchange_Rate          Reserves    1 0.007523 0.784208 positive
+Capital_Formation          Reserves    2 0.007523 0.795736 positive
+  Government_Debt          Reserves    2 0.007523 0.753650 positive
+    Exchange_Rate          Reserves    2 0.007523 0.944399 positive
+Capital_Formation          Reserves    3 0.007523 0.695463 positive
+  Government_Debt          Reserves    3 0.007523 1.020484 positive
+    Exchange_Rate          Reserves    3 0.007523 1.103003 positive
+Capital_Formation          Reserves    1 0.013972 0.472488 positive

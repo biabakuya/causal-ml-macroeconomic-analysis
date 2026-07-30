@@ -1,12 +1,12 @@
 FILTERED EDGES
 ================================================================================
 
-Total filtered : 48
+Total filtered : 46
 
 GDP_Growth__t -> Government_Debt__t-1 (granger)
   Reason: Filtered: only past -> present edges allowed
 
-GDP_Growth__t -> Capital_Formation__t-1 (granger)
+Reserves__t-1 -> Capital_Formation__t-1 (granger)
   Reason: Filtered: only past -> present edges allowed
 
 GDP_Growth__t -> Trade_Balance__t-1 (granger)
@@ -18,10 +18,10 @@ GDP_Growth__t -> Inflation__t-1 (granger)
 Government_Debt__t-1 -> Exchange_Rate__t-1 (granger)
   Reason: Filtered: only past -> present edges allowed
 
-Trade_Balance__t-1 -> Exchange_Rate__t-1 (granger)
+GDP_Growth__t -> Capital_Formation__t-1 (granger)
   Reason: Filtered: only past -> present edges allowed
 
-Reserves__t-1 -> Capital_Formation__t-1 (granger)
+Trade_Balance__t-1 -> Exchange_Rate__t-1 (granger)
   Reason: Filtered: only past -> present edges allowed
 
 Inflation__t-1 -> Reserves__t-1 (granger)
@@ -45,16 +45,16 @@ Government_Debt__t-1 -> Exchange_Rate__t-1 (var_irf)
 Capital_Formation__t-1 -> Exchange_Rate__t-1 (var_irf)
   Reason: Filtered: only past -> present edges allowed
 
-Government_Debt__t-1 -> Government_Debt__t-1 (var_irf)
-  Reason: Self-loop removed
-
 Capital_Formation__t-1 -> Government_Debt__t-1 (var_irf)
   Reason: Filtered: only past -> present edges allowed
 
-Government_Debt__t-1 -> Inflation__t-1 (var_irf)
-  Reason: Filtered: only past -> present edges allowed
+Government_Debt__t-1 -> Government_Debt__t-1 (var_irf)
+  Reason: Self-loop removed
 
 Capital_Formation__t-1 -> Inflation__t-1 (var_irf)
+  Reason: Filtered: only past -> present edges allowed
+
+Government_Debt__t-1 -> Inflation__t-1 (var_irf)
   Reason: Filtered: only past -> present edges allowed
 
 Government_Debt__t-1 -> Reserves__t-1 (var_irf)
@@ -78,7 +78,7 @@ GDP_Growth__t -> Capital_Formation__t-1 (var_fevd)
 Capital_Formation__t-1 -> Capital_Formation__t-1 (var_fevd)
   Reason: Self-loop removed
 
-Government_Debt__t-1 -> Capital_Formation__t-1 (var_fevd)
+Inflation__t-1 -> Capital_Formation__t-1 (var_fevd)
   Reason: Filtered: only past -> present edges allowed
 
 GDP_Growth__t -> Inflation__t-1 (var_fevd)
@@ -87,16 +87,16 @@ GDP_Growth__t -> Inflation__t-1 (var_fevd)
 Capital_Formation__t-1 -> Inflation__t-1 (var_fevd)
   Reason: Filtered: only past -> present edges allowed
 
-Government_Debt__t-1 -> Inflation__t-1 (var_fevd)
-  Reason: Filtered: only past -> present edges allowed
+Inflation__t-1 -> Inflation__t-1 (var_fevd)
+  Reason: Self-loop removed
 
-Trade_Balance__t-1 -> Inflation__t-1 (var_fevd)
+Government_Debt__t-1 -> Inflation__t-1 (var_fevd)
   Reason: Filtered: only past -> present edges allowed
 
 GDP_Growth__t -> Government_Debt__t-1 (var_fevd)
   Reason: Filtered: only past -> present edges allowed
 
-Inflation__t-1 -> Government_Debt__t-1 (var_fevd)
+Capital_Formation__t-1 -> Government_Debt__t-1 (var_fevd)
   Reason: Filtered: only past -> present edges allowed
 
 Trade_Balance__t-1 -> Government_Debt__t-1 (var_fevd)
@@ -109,9 +109,6 @@ Capital_Formation__t-1 -> Trade_Balance__t-1 (var_fevd)
   Reason: Filtered: only past -> present edges allowed
 
 Inflation__t-1 -> Trade_Balance__t-1 (var_fevd)
-  Reason: Filtered: only past -> present edges allowed
-
-Government_Debt__t-1 -> Trade_Balance__t-1 (var_fevd)
   Reason: Filtered: only past -> present edges allowed
 
 Trade_Balance__t-1 -> Trade_Balance__t-1 (var_fevd)
@@ -141,9 +138,6 @@ GDP_Growth__t -> Reserves__t-1 (var_fevd)
 Capital_Formation__t-1 -> Reserves__t-1 (var_fevd)
   Reason: Filtered: only past -> present edges allowed
 
-Government_Debt__t-1 -> Reserves__t-1 (var_fevd)
-  Reason: Filtered: only past -> present edges allowed
-
-Trade_Balance__t-1 -> Reserves__t-1 (var_fevd)
+Inflation__t-1 -> Reserves__t-1 (var_fevd)
   Reason: Filtered: only past -> present edges allowed
 

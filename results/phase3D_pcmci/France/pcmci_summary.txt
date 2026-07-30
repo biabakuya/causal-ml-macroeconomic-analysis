@@ -9,9 +9,12 @@ pc_alpha: 0.05
 alpha (links): 0.05
 independence_test: CMIknn (shuffle_test, knn=5)
 fdr_method: fdr_bh
-Significant links (lag>=1, without self-loops): 3
+Significant links (lag>=1, without self-loops): 6
 
-         source          target  lag  p_value      val     sign
-Government_Debt   Exchange_Rate    1 0.048902 0.504254 positive
-  Exchange_Rate Government_Debt    1 0.048902 0.562149 positive
-  Exchange_Rate Government_Debt    2 0.048902 0.586879 positive
+           source          target  lag  p_value      val     sign
+  Government_Debt   Exchange_Rate    1 0.029341 0.504254 positive
+Capital_Formation   Exchange_Rate    2 0.029341 0.587965 positive
+Capital_Formation   Exchange_Rate    3 0.029341 0.737903 positive
+    Exchange_Rate Government_Debt    1 0.029341 0.562149 positive
+Capital_Formation Government_Debt    2 0.029341 0.476161 positive
+    Exchange_Rate Government_Debt    2 0.029341 0.586879 positive

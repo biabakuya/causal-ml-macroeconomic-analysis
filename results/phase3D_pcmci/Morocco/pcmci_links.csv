@@ -1,1 +1,6 @@
 source,target,lag,p_value,val,sign
+Trade_Balance,Capital_Formation,1,0.04890219560878244,0.5156803421896304,positive
+Reserves,Exchange_Rate,1,0.04890219560878244,0.5140930406023287,positive
+Exchange_Rate,Government_Debt,1,0.04890219560878244,0.4520112928007667,positive
+Reserves,Government_Debt,1,0.04890219560878244,0.5051194419615472,positive
+Reserves,Government_Debt,3,0.04890219560878244,0.48218769534559036,positive
