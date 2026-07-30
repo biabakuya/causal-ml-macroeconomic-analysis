@@ -1,68 +1,72 @@
 # Causal ML Macroeconomic Analysis
 
-This repository contains the code, datasets, figures, and empirical results developed during my internship project on causal analysis and machine learning applied to macroeconomic data.
+This repository contains the code, datasets, figures, and empirical results for the study of the causal effect of investment on GDP growth using Causal Discovery and Double Machine Learning, on a heterogeneous panel of seven countries (2000–2024).
+
+It accompanies the article *"Beyond Correlation: Quantifying the Causal Effect of Investment on Growth through Causal Discovery and Double Machine Learning"* (submitted to *IEEE Access*).
 
 ---
 
-# Project Objective
+## Project Objective
 
-The objective of this work is to study the causal impact of macroeconomic variables on GDP growth using modern causal inference and machine learning techniques.
+The objective of this work is to quantify the causal effect of total investment (gross capital formation) on GDP growth, while rigorously controlling for macroeconomic confounders, using modern causal inference and machine learning techniques.
 
 The project combines:
 
-- Causal Discovery methods
-- Econometric approaches
-- Double Machine Learning (DML)
+- Causal Discovery methods (Granger, VAR, VECM, PCMCI)
+- A multi-method consensus causal graph (DAG) with support scores
+- Double Machine Learning (LinearDML, CausalForestDML)
 - Heterogeneous Treatment Effect estimation
 
-The analysis focuses on 7 countries over the period 2000–2024.
+The analysis focuses on seven countries over the period 2000–2024.
 
 ---
 
-# Countries Studied
+## Countries Studied
 
-- Germany
-- Angola
-- Congo, Dem. Rep.
 - France
-- Ghana
+- Germany
 - Morocco
+- Ghana
 - Nigeria
+- Angola
+- DRC (Democratic Republic of the Congo)
+
+Two development groups are distinguished: developed (France, Germany) and developing (Angola, Ghana, Nigeria, Morocco, DRC).
 
 ---
 
-# Methodological Pipeline
+## Methodological Pipeline
 
 The analysis pipeline follows these main stages:
 
-1. Data collection and harmonization
-2. Data preprocessing
-3. Lagged temporal structure construction
-4. Causal Discovery
-5. Double Machine Learning estimation
-6. Heterogeneous effect analysis
-7. Interpretation and visualization
+1. Multi-source data collection and harmonization (IMF WEO, IMF IFS, World Bank)
+2. Data preprocessing (log transforms, winsorization, standardization)
+3. Lagged temporal structure construction (treatment at t-1, outcome at t)
+4. Causal Discovery (Granger, VAR/IRF/FEVD, VECM/Johansen, PCMCI)
+5. Multi-method DAG synthesis with support scores
+6. Double Machine Learning estimation (global, by country, by group)
+7. Heterogeneous effect analysis and visualization
 
 ---
 
-# Main Methods Used
+## Main Methods Used
 
-## Causal Discovery
+### Causal Discovery
 
 - Granger Causality
-- VAR (Vector Autoregression)
-- VECM (Vector Error Correction Model)
-- PCMCI
-- DAG synthesis
+- VAR (Vector Autoregression) with IRF and FEVD
+- VECM (Vector Error Correction Model) with Johansen test
+- PCMCI (with CMIknn conditional independence test)
+- Multi-method DAG synthesis
 
-## Double Machine Learning
+### Double Machine Learning
 
 - LinearDML
 - CausalForestDML
 
-## Machine Learning Models
+### Nuisance Models (compared)
 
-- Random Forest
+- Random Forest (retained for stability)
 - XGBoost
 - Gradient Boosting
 - Ridge Regression
@@ -71,95 +75,81 @@ The analysis pipeline follows these main stages:
 
 ---
 
-# Main Variables
+## Main Variables
 
-- GDP Growth
-- Gross Capital Formation
-- Exchange Rate
-- Inflation
-- Government Debt
-- Trade Balance
-- Reserves
+- GDP Growth (outcome)
+- Capital Formation / total investment (treatment)
+- Inflation (confounder)
+- Government Debt (confounder)
+- Trade Balance / current account balance (confounder)
+- Exchange Rate (confounder)
+- Reserves (confounder)
 
 ---
 
-# Repository Structure
+## Repository Structure
 
 ```text
 causal-ml-macroeconomic-analysis/
 │
 ├── data/                  # Raw and processed datasets
+│   ├── raw/               # Source files (IMF WEO, IMF IFS)
+│   └── processed/         # Harmonized and prepared datasets
 ├── docs/                  # Documentation files
-├── notebooks/             # Analysis scripts and notebooks
-├── reports/               # Figures and tables
-├── results/               # Statistical outputs
+├── notebooks/             # Analysis scripts
+├── reports/               # Figures and summary tables
+├── results/               # Per-country statistical outputs
 ├── requirements.txt
 └── README.md
+```
 
-# Repository Content
+---
 
-The repository contains:
+## Key Findings
 
-- preprocessing scripts
-- descriptive analysis
-- stationarity analysis
+After the full corrected pipeline, the main results are:
+
+- The net effect of investment on growth is **not statistically significant** at the global level (ATE = -0.344, p = 0.165), nor at the country level, nor between development groups.
+- The two development groups yield effects of the same (mildly negative) sign, with no evidence of two opposing causal regimes.
+- The value of the multi-method approach lies in its **discriminating power**: the conditional PCMCI test discards the Granger-detected links in Germany and Angola as false positives, while retaining a robust direct link (Capital_Formation → GDP_Growth) in **Nigeria only** (support score of 3).
+- These results illustrate the importance of cautious causal inference on short macroeconomic time series.
+
+---
+
+## Repository Content
+
+The repository includes scripts and outputs for:
+
+- preprocessing and harmonization
+- descriptive and stationarity analysis
 - Granger causality analysis
-- VAR estimation
-- cointegration analysis
-- VECM estimation
+- VAR estimation (IRF, FEVD)
+- cointegration and VECM estimation
 - PCMCI causal discovery
-- DAG synthesis
+- multi-method DAG synthesis
 - Double Machine Learning estimation
 - heterogeneous treatment effect analysis
-- graphical visualizations
-- exported CSV reports
+- graphical visualizations and exported CSV reports
 
 ---
 
-# Key Results
+## Figures
 
-The project provides:
+The repository includes visualizations for each methodological phase, available in:
 
-- Temporal causal structures by country
-- Directed Acyclic Graphs (DAGs)
-- Average Treatment Effects (ATE)
-- Heterogeneous Treatment Effects (HTE)
-- Country-level causal comparisons
-- Developed vs developing country comparisons
-- Machine learning nuisance model evaluation
-- Comparative macroeconomic interpretations
+```text
+reports/figures/
+```
+
+Some figures are not directly integrated into the article due to formatting and readability limitations, but are provided here for completeness.
 
 ---
 
-# Example Figures Included
-
-The repository includes multiple visualizations such as:
-
-- GDP Growth evolution
-- Gross Capital Formation trends
-- Correlation matrices
-- Scatter plots
-- Granger causality heatmaps
-- VAR impulse response functions
-- FEVD visualizations
-- PCMCI causal graphs
-- Final DAGs by country
-- DML Average Treatment Effects
-- Heterogeneous Treatment Effect distributions
-- Feature importance visualizations
-- Nuisance model performance comparison
-
----
-
-# Technologies Used
-
-The project was implemented using:
+## Technologies Used
 
 - Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
+- Pandas, NumPy
+- Matplotlib, Seaborn
 - Scikit-learn
 - EconML
 - Statsmodels
@@ -168,7 +158,7 @@ The project was implemented using:
 
 ---
 
-# Installation
+## Installation
 
 Clone the repository:
 
@@ -190,49 +180,18 @@ pip install -r requirements.txt
 
 ---
 
-# Reproducibility
+## Reproducibility
 
-The repository allows full reproducibility of the empirical analysis.
-
-All scripts necessary for:
-
-- preprocessing
-- econometric estimation
-- causal discovery
-- DML estimation
-- figure generation
-- statistical export
-
-are included.
+The repository allows reproduction of the empirical analysis. All scripts required for preprocessing, econometric estimation, causal discovery, DML estimation, figure generation, and statistical export are included. The analysis scripts are located in `notebooks/`.
 
 ---
 
-# Figures and Additional Visualizations
+## Academic Context
 
-Some figures and visualizations included in this repository are not directly integrated into the report/article due to formatting and readability limitations.
-
-Additional graphical outputs are available in:
-
-```text
-reports/figures/
-```
-
-Each figure corresponds to a specific methodological phase.
+This project was developed as part of a Master's internship research project at the ABIL Laboratory, University of Kinshasa (UNIKIN), in collaboration with the International School, Vietnam National University in Hanoi (VNU), focusing on causal inference, macroeconomic analysis, machine learning, and applied econometrics.
 
 ---
 
-# Academic Context
+## Author
 
-This project was developed as part of a Master's internship research project focused on:
-
-- causal inference
-- macroeconomic analysis
-- machine learning
-- applied econometrics
-
----
-
-# Author
-
-Jirince Biaba  Kuya
-Master Internship Project — 2025
+Jirince K. Biaba — Master's Internship Project, 2025
