@@ -1,6 +1,6 @@
 source,target,support,methods,weight_sum,sign_majority
-Capital_Formation__t-1,GDP_Growth__t,3,"pcmci,var_fevd,var_irf",30.1542713123262,positive
-Exchange_Rate__t-1,GDP_Growth__t,2,"pcmci,var_irf",42.71599664832084,mixed
+Exchange_Rate__t-1,GDP_Growth__t,2,"pcmci,var",37.42499658886516,mixed
+Capital_Formation__t-1,GDP_Growth__t,2,"pcmci,var",30.1542713123262,positive
 Government_Debt__t-1,Exchange_Rate__t,1,pcmci,1.371423867669998,positive
 Exchange_Rate__t-3,GDP_Growth__t,1,pcmci,0.723407994654125,positive
 Exchange_Rate__t-2,GDP_Growth__t,1,pcmci,0.6981573680877088,positive
@@ -13,4 +13,4 @@ Capital_Formation__t-2,Exchange_Rate__t,1,pcmci,0.6212358977451858,positive
 Exchange_Rate__t-1,Capital_Formation__t,1,pcmci,0.6193144274026627,positive
 Capital_Formation__t-3,GDP_Growth__t,1,pcmci,0.4983662235597219,positive
 GDP_Growth__t-3,Capital_Formation__t,1,pcmci,0.4610836231192268,positive
-Inflation__t-1,GDP_Growth__t,1,var_fevd,0.1687848176158411,unknown
+Inflation__t-1,GDP_Growth__t,1,var,0.1687848176158411,unknown

@@ -1,24 +1,20 @@
 PHASE 3E — DAG SUMMARY
 Country: Germany
 min_support: 1
-Filtered edges: 43
+Filtered edges: 40
 Removed cycles: 0
-Edges support table: 5
-Edges final DAG: 5
+Edges support table: 3
+Edges final DAG: 3
 
 === FINAL EDGES ===
-                source        target  support          methods  weight_sum sign_majority
-Capital_Formation__t-1 GDP_Growth__t        2 granger,var_fevd    8.226691       unknown
-         Reserves__t-1 GDP_Growth__t        1          var_irf   35.641114      positive
-  Government_Debt__t-1 GDP_Growth__t        1          var_irf   29.431662      positive
-    Exchange_Rate__t-1 GDP_Growth__t        1         var_fevd    0.163135       unknown
-        Inflation__t-1 GDP_Growth__t        1         var_fevd    0.104846       unknown
+                source        target  support     methods  weight_sum sign_majority
+Capital_Formation__t-1 GDP_Growth__t        2 granger,var    8.226691       unknown
+    Exchange_Rate__t-1 GDP_Growth__t        1         var    0.163135       unknown
+        Inflation__t-1 GDP_Growth__t        1         var    0.104846       unknown
 
 === NODE METRICS ===
                   node                   label  in_degree  out_degree  degree
-         GDP_Growth__t          GDP Growth (t)          5           0       5
+         GDP_Growth__t          GDP Growth (t)          3           0       3
 Capital_Formation__t-1 Capital Formation (t-1)          0           1       1
     Exchange_Rate__t-1     Exchange Rate (t-1)          0           1       1
-  Government_Debt__t-1   Government Debt (t-1)          0           1       1
         Inflation__t-1         Inflation (t-1)          0           1       1
-         Reserves__t-1          Reserves (t-1)          0           1       1

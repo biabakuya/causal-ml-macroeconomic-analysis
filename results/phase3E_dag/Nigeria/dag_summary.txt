@@ -7,22 +7,22 @@ Edges support table: 15
 Edges final DAG: 15
 
 === FINAL EDGES ===
-                source               target  support                methods  weight_sum sign_majority
-Capital_Formation__t-1        GDP_Growth__t        3 pcmci,var_fevd,var_irf   30.154271      positive
-    Exchange_Rate__t-1        GDP_Growth__t        2          pcmci,var_irf   42.715997         mixed
-  Government_Debt__t-1     Exchange_Rate__t        1                  pcmci    1.371424      positive
-    Exchange_Rate__t-3        GDP_Growth__t        1                  pcmci    0.723408      positive
-    Exchange_Rate__t-2        GDP_Growth__t        1                  pcmci    0.698157      positive
-       GDP_Growth__t-3     Exchange_Rate__t        1                  pcmci    0.684791      positive
-Capital_Formation__t-3     Exchange_Rate__t        1                  pcmci    0.668730      positive
-Capital_Formation__t-1     Exchange_Rate__t        1                  pcmci    0.647656      positive
-       GDP_Growth__t-1     Exchange_Rate__t        1                  pcmci    0.626102      positive
-       GDP_Growth__t-2     Exchange_Rate__t        1                  pcmci    0.622197      positive
-Capital_Formation__t-2     Exchange_Rate__t        1                  pcmci    0.621236      positive
-    Exchange_Rate__t-1 Capital_Formation__t        1                  pcmci    0.619314      positive
-Capital_Formation__t-3        GDP_Growth__t        1                  pcmci    0.498366      positive
-       GDP_Growth__t-3 Capital_Formation__t        1                  pcmci    0.461084      positive
-        Inflation__t-1        GDP_Growth__t        1               var_fevd    0.168785       unknown
+                source               target  support   methods  weight_sum sign_majority
+    Exchange_Rate__t-1        GDP_Growth__t        2 pcmci,var   37.424997         mixed
+Capital_Formation__t-1        GDP_Growth__t        2 pcmci,var   30.154271      positive
+  Government_Debt__t-1     Exchange_Rate__t        1     pcmci    1.371424      positive
+    Exchange_Rate__t-3        GDP_Growth__t        1     pcmci    0.723408      positive
+    Exchange_Rate__t-2        GDP_Growth__t        1     pcmci    0.698157      positive
+       GDP_Growth__t-3     Exchange_Rate__t        1     pcmci    0.684791      positive
+Capital_Formation__t-3     Exchange_Rate__t        1     pcmci    0.668730      positive
+Capital_Formation__t-1     Exchange_Rate__t        1     pcmci    0.647656      positive
+       GDP_Growth__t-1     Exchange_Rate__t        1     pcmci    0.626102      positive
+       GDP_Growth__t-2     Exchange_Rate__t        1     pcmci    0.622197      positive
+Capital_Formation__t-2     Exchange_Rate__t        1     pcmci    0.621236      positive
+    Exchange_Rate__t-1 Capital_Formation__t        1     pcmci    0.619314      positive
+Capital_Formation__t-3        GDP_Growth__t        1     pcmci    0.498366      positive
+       GDP_Growth__t-3 Capital_Formation__t        1     pcmci    0.461084      positive
+        Inflation__t-1        GDP_Growth__t        1       var    0.168785       unknown
 
 === NODE METRICS ===
                   node                   label  in_degree  out_degree  degree

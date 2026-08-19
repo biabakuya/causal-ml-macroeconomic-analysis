@@ -1,5 +1,5 @@
 digraph DAG {
-	bgcolor=white fontsize=22 label="Final DAG — DRC (support ≥ 1, acyclic)" labelloc=t pad=0.25 rankdir=LR
+	bgcolor=white fontsize=22 label="Multi-method evidence map — DRC (support ≥ 1)" labelloc=t pad=0.25 rankdir=LR
 	graph [concentrate=false nodesep=0.7 overlap=false ranksep=1.0 splines=polyline]
 	node [color="#1f2937" fontname=Helvetica fontsize=12 shape=ellipse style=filled]
 	edge [arrowsize=0.8 fontname=Helvetica fontsize=9]

@@ -1,35 +1,35 @@
 PHASE 3E — DAG SUMMARY
 Country: Angola
 min_support: 1
-Filtered edges: 47
+Filtered edges: 45
 Removed cycles: 0
 Edges support table: 22
 Edges final DAG: 22
 
 === FINAL EDGES ===
-                source               target  support          methods  weight_sum sign_majority
-  Government_Debt__t-1        GDP_Growth__t        2  granger,var_irf   30.145411      negative
-    Exchange_Rate__t-1        GDP_Growth__t        2  granger,var_irf   11.855586      positive
-Capital_Formation__t-1        GDP_Growth__t        2 granger,var_fevd    1.209376       unknown
-         Reserves__t-1        GDP_Growth__t        1          granger   42.879747       unknown
-        Inflation__t-1        GDP_Growth__t        1          granger    1.775952       unknown
-    Exchange_Rate__t-1   Government_Debt__t        1            pcmci    0.672030      positive
-  Government_Debt__t-3     Exchange_Rate__t        1            pcmci    0.592936      positive
-  Government_Debt__t-1     Exchange_Rate__t        1            pcmci    0.586522      positive
-  Government_Debt__t-2     Exchange_Rate__t        1            pcmci    0.556971      positive
-    Exchange_Rate__t-3          Reserves__t        1            pcmci    0.553544      positive
-    Exchange_Rate__t-3   Government_Debt__t        1            pcmci    0.533912      positive
-    Exchange_Rate__t-2   Government_Debt__t        1            pcmci    0.533893      positive
-       GDP_Growth__t-1     Exchange_Rate__t        1            pcmci    0.527377      positive
-Capital_Formation__t-2     Exchange_Rate__t        1            pcmci    0.521002      positive
-Capital_Formation__t-1     Exchange_Rate__t        1            pcmci    0.512105      positive
-  Government_Debt__t-1 Capital_Formation__t        1            pcmci    0.503255      positive
-         Reserves__t-3   Government_Debt__t        1            pcmci    0.502771      positive
-    Exchange_Rate__t-1 Capital_Formation__t        1            pcmci    0.467977      positive
-         Reserves__t-1     Exchange_Rate__t        1            pcmci    0.431448      positive
-         Reserves__t-2     Exchange_Rate__t        1            pcmci    0.414346      positive
-        Inflation__t-2     Exchange_Rate__t        1            pcmci    0.391350      positive
-Capital_Formation__t-2   Government_Debt__t        1            pcmci    0.377081      positive
+                source               target  support     methods  weight_sum sign_majority
+Capital_Formation__t-1        GDP_Growth__t        2 granger,var   10.197580      positive
+         Reserves__t-1        GDP_Growth__t        1     granger   42.879747       unknown
+  Government_Debt__t-1        GDP_Growth__t        1     granger   16.896186       unknown
+        Inflation__t-1        GDP_Growth__t        1     granger    1.775952       unknown
+    Exchange_Rate__t-1        GDP_Growth__t        1     granger    1.389257       unknown
+    Exchange_Rate__t-1   Government_Debt__t        1       pcmci    0.672030      positive
+  Government_Debt__t-3     Exchange_Rate__t        1       pcmci    0.592936      positive
+  Government_Debt__t-1     Exchange_Rate__t        1       pcmci    0.586522      positive
+  Government_Debt__t-2     Exchange_Rate__t        1       pcmci    0.556971      positive
+    Exchange_Rate__t-3          Reserves__t        1       pcmci    0.553544      positive
+    Exchange_Rate__t-3   Government_Debt__t        1       pcmci    0.533912      positive
+    Exchange_Rate__t-2   Government_Debt__t        1       pcmci    0.533893      positive
+       GDP_Growth__t-1     Exchange_Rate__t        1       pcmci    0.527377      positive
+Capital_Formation__t-2     Exchange_Rate__t        1       pcmci    0.521002      positive
+Capital_Formation__t-1     Exchange_Rate__t        1       pcmci    0.512105      positive
+  Government_Debt__t-1 Capital_Formation__t        1       pcmci    0.503255      positive
+         Reserves__t-3   Government_Debt__t        1       pcmci    0.502771      positive
+    Exchange_Rate__t-1 Capital_Formation__t        1       pcmci    0.467977      positive
+         Reserves__t-1     Exchange_Rate__t        1       pcmci    0.431448      positive
+         Reserves__t-2     Exchange_Rate__t        1       pcmci    0.414346      positive
+        Inflation__t-2     Exchange_Rate__t        1       pcmci    0.391350      positive
+Capital_Formation__t-2   Government_Debt__t        1       pcmci    0.377081      positive
 
 === NODE METRICS ===
                   node                   label  in_degree  out_degree  degree

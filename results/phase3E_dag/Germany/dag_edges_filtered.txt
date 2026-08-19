@@ -1,7 +1,7 @@
 FILTERED EDGES
 ================================================================================
 
-Total filtered : 43
+Total filtered : 40
 
 GDP_Growth__t -> Inflation__t-1 (granger)
   Reason: Filtered: only past -> present edges allowed
@@ -27,40 +27,31 @@ Exchange_Rate__t-1 -> Government_Debt__t-1 (granger)
 Capital_Formation__t-1 -> Exchange_Rate__t-1 (granger)
   Reason: Filtered: only past -> present edges allowed
 
-Reserves__t-1 -> Capital_Formation__t-1 (var_irf)
-  Reason: Filtered: only past -> present edges allowed
-
-Government_Debt__t-1 -> Capital_Formation__t-1 (var_irf)
-  Reason: Filtered: only past -> present edges allowed
-
-Reserves__t-1 -> Exchange_Rate__t-1 (var_irf)
-  Reason: Filtered: only past -> present edges allowed
-
 Capital_Formation__t-1 -> Exchange_Rate__t-1 (var_irf)
   Reason: Filtered: only past -> present edges allowed
+
+Exchange_Rate__t-1 -> Exchange_Rate__t-1 (var_irf)
+  Reason: Self-loop removed
+
+GDP_Growth__t -> GDP_Growth__t (var_irf)
+  Reason: Self-loop removed
 
 Reserves__t-1 -> Government_Debt__t-1 (var_irf)
   Reason: Filtered: only past -> present edges allowed
 
-Capital_Formation__t-1 -> Government_Debt__t-1 (var_irf)
+Exchange_Rate__t-1 -> Government_Debt__t-1 (var_irf)
   Reason: Filtered: only past -> present edges allowed
 
 Reserves__t-1 -> Inflation__t-1 (var_irf)
   Reason: Filtered: only past -> present edges allowed
 
-Government_Debt__t-1 -> Inflation__t-1 (var_irf)
+Trade_Balance__t-1 -> Inflation__t-1 (var_irf)
   Reason: Filtered: only past -> present edges allowed
 
-Capital_Formation__t-1 -> Reserves__t-1 (var_irf)
-  Reason: Filtered: only past -> present edges allowed
-
-Reserves__t-1 -> Reserves__t-1 (var_irf)
+Trade_Balance__t-1 -> Trade_Balance__t-1 (var_irf)
   Reason: Self-loop removed
 
-Capital_Formation__t-1 -> Trade_Balance__t-1 (var_irf)
-  Reason: Filtered: only past -> present edges allowed
-
-Reserves__t-1 -> Trade_Balance__t-1 (var_irf)
+GDP_Growth__t -> Trade_Balance__t-1 (var_irf)
   Reason: Filtered: only past -> present edges allowed
 
 GDP_Growth__t -> GDP_Growth__t (var_fevd)

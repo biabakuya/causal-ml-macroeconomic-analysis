@@ -273,7 +273,19 @@ def load_granger_edges(granger_path: Path, alpha=None):
     return pd.DataFrame(out_rows)
 
 
-def load_var_irf_edges(irf_path: Path, irf_min_abs=0.05, horizon_min=1, top_k=None):
+def load_var_irf_edges(irf_path: Path, irf_min_abs=0.05, horizon_min=1, top_k=None,
+                       stable_horizons=(1, 2, 3)):
+    """
+    VAR-IRF edge detection (corrige Faiblesse 4).
+
+    Une arete X -> Y n'est creditee par l'IRF que si la reponse de Y a un choc
+    de X garde un SIGNE STABLE sur les premiers horizons (h1-h3). Cela evite de
+    crediter des IRF oscillantes dont seul le pic en valeur absolue depasse un
+    seuil. Le signe rapporte est celui de la reponse stable.
+
+    Note : le parametre irf_min_abs est conserve pour compatibilite d'appel mais
+    n'est plus le critere principal ; la stabilite du signe prime.
+    """
     df = pd.read_csv(irf_path)
     cols = [c.lower() for c in df.columns]
     required = {"horizon", "response", "shock", "irf"}
@@ -285,47 +297,60 @@ def load_var_irf_edges(irf_path: Path, irf_min_abs=0.05, horizon_min=1, top_k=No
     shock_col = df.columns[cols.index("shock")]
     irf_col = df.columns[cols.index("irf")]
 
-    df2 = df[df[horizon_col] >= horizon_min].copy()
-    if df2.empty:
-        return pd.DataFrame(columns=["source", "target", "method", "weight", "sign"])
-
-    grouped = []
-    for (resp, shock), g in df2.groupby([resp_col, shock_col]):
-        arr = g[irf_col].astype(float).values
-        h_arr = g[horizon_col].astype(int).values
-        idx = int(np.argmax(np.abs(arr)))
-        max_abs = float(np.abs(arr[idx]))
-        signed_val = float(arr[idx])
-        best_h = int(h_arr[idx])
-        grouped.append((shock, resp, max_abs, signed_val, best_h))
-
-    gdf = pd.DataFrame(grouped, columns=["shock", "response", "max_abs", "signed_val", "best_horizon"])
-    gdf = gdf[gdf["max_abs"] >= float(irf_min_abs)].copy()
-
-    if gdf.empty:
-        return pd.DataFrame(columns=["source", "target", "method", "weight", "sign"])
-
-    if top_k is not None and int(top_k) > 0:
-        gdf = (
-            gdf.sort_values(["response", "max_abs"], ascending=[True, False])
-            .groupby("response", as_index=False)
-            .head(int(top_k))
-        )
-
     out_rows = []
-    for _, r in gdf.iterrows():
-        src_base, src_time = split_var_time(str(r["shock"]))
-        tgt_base, tgt_time = split_var_time(str(r["response"]))
+    for (resp, shock), g in df.groupby([resp_col, shock_col]):
+        g = g.sort_values(horizon_col)
+        h = g[horizon_col].astype(int).values
+        v = g[irf_col].astype(float).values
+
+        # Valeurs sur les horizons de stabilite (h1-h3 par defaut)
+        mask = np.isin(h, list(stable_horizons))
+        vals = v[mask]
+        if len(vals) < len(stable_horizons):
+            continue
+
+        signs = np.sign(vals)
+        # exclure les zeros stricts du test de stabilite
+        nonzero = signs[signs != 0]
+        if len(nonzero) == 0:
+            continue
+
+        # signe stable si tous les signes non nuls sont identiques
+        if not np.all(nonzero == nonzero[0]):
+            continue
+
+        # amplitude minimale (garde-fou) : au moins un horizon depasse irf_min_abs
+        if float(np.max(np.abs(vals))) < float(irf_min_abs):
+            continue
+
+        signed_val = float(nonzero[0])  # +1 ou -1 -> pour le signe
+
+        src_base, src_time = split_var_time(str(shock))
+        tgt_base, tgt_time = split_var_time(str(resp))
 
         out_rows.append({
             "source": temporal_node_name(src_base, src_time),
             "target": temporal_node_name(tgt_base, tgt_time),
             "method": "var_irf",
-            "weight": float(r["max_abs"]),
-            "sign": sign_of(float(r["signed_val"])),
+            "weight": float(np.max(np.abs(vals))),
+            "sign": sign_of(signed_val),
         })
 
-    return pd.DataFrame(out_rows)
+    result = pd.DataFrame(out_rows)
+
+    # top_k par response (conserve le comportement d'origine si demande)
+    if top_k is not None and int(top_k) > 0 and not result.empty:
+        result = result.assign(_absw=result["weight"].abs())
+        result = (
+            result.sort_values(["target", "_absw"], ascending=[True, False])
+            .groupby("target", as_index=False)
+            .head(int(top_k))
+            .drop(columns=["_absw"])
+        )
+
+    if result.empty:
+        return pd.DataFrame(columns=["source", "target", "method", "weight", "sign"])
+    return result
 
 
 def load_var_fevd_edges(fevd_path: Path, fevd_min_share=0.10, use_max_horizon=True):
@@ -412,11 +437,23 @@ def synthesize_edges(method_dfs):
             columns=["source", "target", "support", "methods", "sign_majority", "weight_sum"]
         ), filtered_edges
 
+    # --- Correction Faiblesse 4 : VAR = une seule famille de methode ---
+    # IRF et FEVD proviennent du MEME VAR estime : ils ne sont pas des
+    # diagnostics independants et ne doivent compter que pour un seul vote.
+    def method_family(m):
+        m = str(m).lower()
+        if m in ("var_irf", "var_fevd"):
+            return "var"
+        return m
+
+    edges = edges.copy()
+    edges["method_family"] = edges["method"].apply(method_family)
+
     agg = (
         edges.groupby(["source", "target"])
         .agg(
-            support=("method", lambda x: len(set(x))),
-            methods=("method", lambda x: ",".join(sorted(set(x)))),
+            support=("method_family", lambda x: len(set(x))),
+            methods=("method_family", lambda x: ",".join(sorted(set(x)))),
             weight_sum=("weight", lambda x: float(np.nansum(pd.to_numeric(x, errors="coerce").fillna(0.0)))),
         )
         .reset_index()
@@ -493,7 +530,7 @@ def graphviz_dag(
     rankdir: str = "LR",
     engine: str = "dot",
 ):
-    title = f"Final DAG — {country} (support ≥ {min_support}, acyclic)"
+    title = f"Multi-method evidence map — {country} (support ≥ {min_support})"
     dot = Digraph(name="DAG", format="png", engine=engine)
 
     dot.attr(

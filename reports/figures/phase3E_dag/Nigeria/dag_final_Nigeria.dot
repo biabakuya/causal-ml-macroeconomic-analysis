@@ -1,5 +1,5 @@
 digraph DAG {
-	bgcolor=white fontsize=22 label="Final DAG — Nigeria (support ≥ 1, acyclic)" labelloc=t pad=0.25 rankdir=LR
+	bgcolor=white fontsize=22 label="Multi-method evidence map — Nigeria (support ≥ 1)" labelloc=t pad=0.25 rankdir=LR
 	graph [concentrate=false nodesep=0.7 overlap=false ranksep=1.0 splines=polyline]
 	node [color="#1f2937" fontname=Helvetica fontsize=12 shape=ellipse style=filled]
 	edge [arrowsize=0.8 fontname=Helvetica fontsize=9]
@@ -33,8 +33,8 @@ digraph DAG {
 		Exchange_Rate__t [label="Exchange Rate (t)" fillcolor="#1d4ed8" fixedsize=true fontcolor=white height=1.04 width=2.22]
 		GDP_Growth__t [label="GDP Growth (t)" fillcolor="#facc15" fixedsize=true fontcolor=black height=0.98 width=2.06]
 	}
-	"Capital_Formation__t-1" -> GDP_Growth__t [label="s=3" color="#16a34a" minlen=2 penwidth=2.8]
 	"Exchange_Rate__t-1" -> GDP_Growth__t [label="s=2" color="#d97706" minlen=2 penwidth=2.0999999999999996]
+	"Capital_Formation__t-1" -> GDP_Growth__t [label="s=2" color="#16a34a" minlen=2 penwidth=2.0999999999999996]
 	"Government_Debt__t-1" -> Exchange_Rate__t [label="s=1" color="#16a34a" minlen=2 penwidth=1.4]
 	"Exchange_Rate__t-3" -> GDP_Growth__t [label="s=1" color="#16a34a" minlen=2 penwidth=1.4]
 	"Exchange_Rate__t-2" -> GDP_Growth__t [label="s=1" color="#16a34a" minlen=2 penwidth=1.4]
